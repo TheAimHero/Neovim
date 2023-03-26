@@ -1,0 +1,9 @@
+-- -- vim.lsp.stop_client(vim.lsp.get_active_clients())--stops all the active clinets
+--
+-- local M = {}
+--
+-- M.thi = function()
+-- 	print(vim.lsp.get_active_clients())
+-- end
+--
+-- return M
