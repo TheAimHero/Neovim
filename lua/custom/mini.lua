@@ -33,7 +33,7 @@ return {
 		require("mini.bracketed").setup({
 			buffer = { suffix = "b", options = {} },
 			comment = { suffix = "c", options = {} },
-			conflict = { suffix = "", options = {} },
+			conflict = { suffix = "x", options = {} },
 			diagnostic = { suffix = "d", options = {} },
 			file = { suffix = "", options = {} },
 			indent = { suffix = "i", options = {} },

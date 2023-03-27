@@ -1,9 +1,11 @@
 return {
 	-- a number <1 is a percentage., >1 is a fixed size
-	defaults = {},
+	defaults = {
+		version = "*",
+	},
 	position = "center",
 	install = { colorscheme = { "catppuccin", "tokyonight-moon", "carbonfox", "habamax" } },
-	checker = { frequency = 86400 },
+	checker = { enabled = true, frequency = 36000 },
 	-- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
 	ui = {
 		size = { width = 0.6, height = 0.8 },

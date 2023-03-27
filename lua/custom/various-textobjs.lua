@@ -20,7 +20,9 @@ return {
 					opener = "open"
 				elseif vim.fn.has("linux") == 1 then
 					opener = "xdg-open "
-				elseif vim.fn.has("win64") == 1 or fn.has("win32") == 1 then
+				elseif vim.fn.has("wsl") == 1 then
+					opener = "wsl-xdg-open "
+				elseif vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
 					opener = "start"
 				end
 				vim.cmd("silent ! " .. opener .. "'" .. url .. "'")

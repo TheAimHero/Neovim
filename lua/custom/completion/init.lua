@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
+	version = false,
 	event = "VeryLazy",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",

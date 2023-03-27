@@ -40,7 +40,7 @@ return {
 					{
 						"diagnostics",
 						on_click = function()
-              vim.cmd('Trouble document_diagnostics')
+							vim.cmd("Trouble document_diagnostics")
 						end,
 						symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					},
@@ -49,6 +49,11 @@ return {
 						icons_enabled = true,
 						icon = "祥",
 						color = "DiagnosticSignInfo",
+					},
+					{
+						require("lazy.status").updates,
+						cond = require("lazy.status").has_updates,
+						color = { fg = "#ff9e64" },
 					},
 				},
 				lualine_y = { "filetype" },

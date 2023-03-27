@@ -12,9 +12,9 @@ return {
 				enabled_commands = false,
 			},
 		},
-		config = function()
-			require("custom.dap.nvim-dap")
-			require("custom.dap.dapui_auto")
-		end,
 	},
+	config = function()
+		require("custom.dap.nvim-dap")
+		require("custom.dap.dapui_auto")
+	end,
 }

@@ -23,8 +23,8 @@ local options = {
 	timeoutlen = 400, -- time to wait for a mapped sequence to complete (in milliseconds)
 	undofile = true, -- enable persistent undo
 	updatetime = 300, -- faster completion (4000ms default)
-	-- if a file is being edited by another program
-	-- (or was written to file while editing with another program), it is not allowed to be edited
+	-- if a file isyes being edited by another program
+	-- (or was writtenyes to file while editing with another program), it is not allowed to be edited
 	signcolumn = "auto",
 	writebackup = false,
 	expandtab = true, -- convert tabs to spaces
@@ -43,20 +43,26 @@ local options = {
 	linebreak = true, -- Wrap long lines at 'breakat' (if 'wrap' is set)
 	wrap = false, --Display long lines as just one line
 	equalalways = false,
-	foldcolumn = "0",
-	foldlevel = 99,
 	ruler = false, -- Don't show cursor position in command line
 	infercase = true, --Infer letter cases for richer built-in keyword completion
-	foldlevelstart = 99,
-	foldenable = true,
 	virtualedit = "block", -- Allow going past the end of line in visual block mode
 	fillchars = { diff = "" },
+	foldlevelstart = 99,
+	foldnestmax = 10,
+	foldcolumn = "0",
+	foldlevel = 99,
+	foldenable = false,
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- vim.opt.shortmess = "aWAICF" -- flags to shorten vim messages, see :help 'shortmess' --Causes some problems
+if vim.fn.has("nvim-0.9.0") == 1 then
+	vim.opt.statuscolumn = [[%!v:lua.Status.column()]]
+	vim.opt.diffopt:append("linematch:60") -- enable linematch diff algorithm
+end
+
+-- t.shortmess = "aWAICF" -- flags to shorten vim messages, see :help 'shortmess' --Causes some problems
 vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use

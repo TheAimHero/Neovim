@@ -46,11 +46,6 @@ keymap({ "n", "x" }, "<leader>ur", function()
 end, opts)
 
 --Toggle Stuff
-keymap("n", "\\w", "<cmd>setlocal wrap!<CR>")
-keymap("n", "\\b", "<cmd>lua vim.o.bg = vim.o.bg == 'dark' and 'light' or 'dark'<CR>")
-keymap("n", "\\c", "<cmd>setlocal cursorline!<CR>")
-keymap("n", "\\s", "<cmd>setlocal spell!<CR>")
-keymap("n", "\\a", "<cmd>ASToggle<CR>")
 
 --Resize
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

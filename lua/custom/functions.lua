@@ -104,8 +104,4 @@ M.Del = function()
 	end
 end
 
-M.try = function()
-	print(vim.fn.has("wsl"))
-end
-
 return M

@@ -15,6 +15,7 @@ require("lazy").setup({
 
 	require("custom.catppuccin"),
 	require("custom.treesitter"),
+	require("custom.gitsigns"),
 	require("custom.ssr"),
 	require("custom.ufo"),
 	require("custom.tsnode-marker"),
@@ -33,6 +34,7 @@ require("lazy").setup({
 	require("custom.various-textobjs"),
 	require("custom.nvim-ts-rainbow2"),
 	require("custom.mini"),
+	require("custom.fidget"),
 	require("custom.nvim-lspconfig"),
 	require("custom.recorder"),
 	require("custom.substitute"),
@@ -45,6 +47,7 @@ require("lazy").setup({
 	require("custom.persisted"),
 	require("custom.alpha"),
 	require("custom.window-picker"),
+	require("custom.wsl-clip"),
 
 	{ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" },
 	{
@@ -136,23 +139,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"j-hui/fidget.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("fidget").setup({
-				timer = {
-					spinner_rate = 100,
-					fidget_decay = 1000,
-					task_decay = 1000,
-				},
-				text = {
-					spinner = "bouncing_ball",
-					done = "",
-				},
-			})
-		end,
-	},
-	{
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = "WinNew",
@@ -174,12 +160,6 @@ require("lazy").setup({
 	},
 
 	--Git
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "BufReadPost",
-		opts = { preview_config = { border = "single" } },
-		config = true,
-	},
 	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
 
 	--Window

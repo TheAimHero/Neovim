@@ -5,4 +5,5 @@ require("sniprun").setup({
 	-- 		compiler = "clang --debug",
 	-- 	},
 	-- },
+  
 })

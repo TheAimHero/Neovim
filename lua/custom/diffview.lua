@@ -1,7 +1,7 @@
 return {
 	"sindrets/diffview.nvim",
 	cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-	commit = "6420a73b340fdb1f842479cd7640dcca9ec6f5d1",
+	commit = "6420a73b340fdb1f842479cd7640dcca9ec6f5d1", -- temp until new version
 	config = function()
 		-- Lua
 		local actions = require("diffview.actions")
