@@ -3,4 +3,6 @@ if vim.fn.has("wsl") then
 		"Konfekt/vim-wsl-copy-paste",
 		event = "VeryLazy",
 	}
+else
+	return {}
 end

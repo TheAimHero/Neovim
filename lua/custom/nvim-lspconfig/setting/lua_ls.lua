@@ -12,9 +12,6 @@ require("lspconfig").lua_ls.setup({
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	log_level = 2,
-	root_dir = function()
-		return false
-	end,
 	single_file_support = true,
 	settings = {
 		Lua = {
