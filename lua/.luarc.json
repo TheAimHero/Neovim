@@ -2,6 +2,9 @@
     "workspace.checkThirdParty": false,
     "diagnostics.disable": [
         "param-type-mismatch",
-        "missing-parameter"
+        "missing-parameter",
+        "redundant-parameter",
+        "unused-local",
+        "different-requires"
     ]
 }

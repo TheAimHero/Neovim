@@ -1,7 +1,7 @@
 return {
 	"utilyre/barbecue.nvim",
   -- enabled=false,
-	event = "BufReadPost",
+	event = "User FileOpened",
 	dependencies = { "SmiteshP/nvim-navic" },
 	config = function()
 		require("barbecue").setup({

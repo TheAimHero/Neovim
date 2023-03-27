@@ -42,6 +42,7 @@ require("lazy").setup({
 	require("custom.zen-mode"),
 	require("custom.yanky"),
 	require("custom.nvim-hlslens"),
+	require("custom.autopairs"),
 	require("custom.lualine"),
 	require("custom.markdown"),
 	require("custom.persisted"),
@@ -77,19 +78,20 @@ require("lazy").setup({
 	--General
 	{
 		"axieax/urlview.nvim",
-		event = "VeryLazy",
+		event = "User FileOpened",
 		config = true,
 		opts = { default_action = "firefox", default_picker = "telescope" },
 	},
 	{
 		"numToStr/Comment.nvim",
 		config = true,
-		event = "VeryLazy",
+		event = "User FileOpened",
+		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
 	},
 	{
 		"kylechui/nvim-surround",
 		config = true,
-		event = "VeryLazy",
+		event = "User FileOpened",
 	},
 	{
 		"michaelb/sniprun",
@@ -117,13 +119,12 @@ require("lazy").setup({
 		},
 	},
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
-	{ "lewis6991/impatient.nvim" },
 
 	--Ui
 	{
 		"m4xshen/smartcolumn.nvim",
 		config = true,
-		event = "BufReadPost",
+		event = "User FileOpened",
 		opts = {
 			disabled_filetypes = {
 				"help",
@@ -149,7 +150,7 @@ require("lazy").setup({
 		"declancm/cinnamon.nvim",
 		enabled = true,
 		config = true,
-		event = "VeryLazy",
+		event = "User FileOpened",
 		opts = {
 			extra_keymaps = true,
 			extended_keymaps = false,
@@ -194,10 +195,7 @@ require("lazy").setup({
 		"NvChad/nvim-colorizer.lua",
 		config = true,
 		name = "colorizer",
-		cmd = {
-			"ColorizerToggle",
-			"ColorizerAttachToBuffer",
-		},
+		cmd = { "ColorizerToggle", "ColorizerAttachToBuffer" },
 		opts = { user_default_options = { names = false } },
 	},
 
@@ -205,6 +203,6 @@ require("lazy").setup({
 	{
 		"navarasu/onedark.nvim",
 		event = "CmdlineEnter",
-		dependencies = { "folke/tokyonight.nvim", "EdenEast/nightfox.nvim", "ray-x/starry.nvim" },
+		dependencies = { "LunarVim/lunar.nvim", "folke/tokyonight.nvim", "EdenEast/nightfox.nvim", "ray-x/starry.nvim" },
 	},
 }, require("custom.lazy"))

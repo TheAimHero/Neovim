@@ -1,7 +1,7 @@
 return {
 	"echasnovski/mini.nvim",
 	branch = "main",
-	event = "VeryLazy",
+	event = { "CmdlineEnter", "User FileOpened" },
 	config = function()
 		require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 

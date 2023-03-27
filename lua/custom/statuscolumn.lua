@@ -25,7 +25,7 @@ function M.column()
 		dap and ("%#" .. dap.texthl .. "#" .. dap.text .. "%*") or "",
 		[[%=]],
 		[[%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''} ]],
-		git_sign and ("%#" .. git_sign.texthl .. "#" .. git_sign.text .. "%*") or "│ ",
+		git_sign and ("%#" .. git_sign.texthl .. "#" .. git_sign.text .. "%*") or "  ",
 	}
 	return table.concat(components, "")
 end
