@@ -1,6 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
+--Make alpha popup when no buffers remain
 augroup("alpha_on_empty", { clear = true })
 autocmd("User", {
 	pattern = "BDeletePost*",
@@ -16,8 +17,9 @@ autocmd("User", {
 	end,
 })
 
+--Disable mini on some filetype
 augroup("No_Mini", { clear = true })
-autocmd("FileType", {
+autocmd({ "FileType" }, {
 	pattern = M.disable_table,
 	group = "No_Mini",
 	callback = function()

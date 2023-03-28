@@ -1,6 +1,6 @@
 return {
 	"chrisgrieser/nvim-various-textobjs",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		require("various-textobjs").setup({
 			useDefaultKeymaps = true,

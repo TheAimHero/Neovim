@@ -70,7 +70,6 @@ keymap("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("i", "ff", "<ESC>", opts)
 
 --Resize
 keymap("i", "<C-Up>", ":resize -2<CR>", opts)
@@ -89,8 +88,6 @@ keymap("x", "p", "<Plug>(YankyPutAfter)", opts)
 keymap("x", "P", "<Plug>(YankyPutBefore)", opts)
 keymap("x", "y", "<Plug>(YankyYank)", opts)
 
---Terminal Mode
-keymap("t", "ff", "<ESC>", opts)
 
 keymap("t", "<C-h>", "<C-\\><C-N><C-h>", opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-j>", opts)

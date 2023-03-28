@@ -1,6 +1,6 @@
 return {
 	"utilyre/barbecue.nvim",
-  -- enabled=false,
+  enabled=true,
 	event = "User FileOpened",
 	dependencies = { "SmiteshP/nvim-navic" },
 	config = function()

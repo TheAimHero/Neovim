@@ -1,6 +1,6 @@
 return {
 	"j-hui/fidget.nvim",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		require("fidget").setup({
 			timer = {

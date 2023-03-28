@@ -1,7 +1,7 @@
 return {
 	"willothy/flatten.nvim",
 	-- cmd = "ToggleTerm",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = true,
 	opts = {
 		callbacks = {

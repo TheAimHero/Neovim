@@ -80,6 +80,7 @@ M.disable_table = {
 	"man",
 	"terminal",
 	"qf",
+  "nowrite",
 }
 
 local function file_bool(name)

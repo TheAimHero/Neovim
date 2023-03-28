@@ -1,6 +1,6 @@
 return {
 	"gbprod/substitute.nvim",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		require("substitute").setup({
 			on_substitute = require("yanky.integration").substitute(),
