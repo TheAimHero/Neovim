@@ -1,7 +1,16 @@
+local function diff_source()
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
+end
 return {
 	"nvim-lualine/lualine.nvim",
-	-- event = { "BufNew", "BufReadPost" },
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		require("lualine").setup({
 			options = {
@@ -28,11 +37,15 @@ return {
 					{ "b:gitsigns_head", icon = "" },
 					{
 						"diff",
+						source = diff_source,
 						diff_color = {
 							added = "DiagnosticSignOk",
 							modified = "DiagnosticSignWarn",
 							removed = "DiagnosticSignError",
 						},
+						on_click = function()
+							vim.cmd("silent G add %")
+						end,
 					},
 				},
 				lualine_c = { { require("recorder").recordingStatus } },

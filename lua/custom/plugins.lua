@@ -30,7 +30,7 @@ require("lazy").setup({
 	require("custom.auto-save"),
 	require("custom.project"),
 	require("custom.bufferline"),
-	require("custom.lightbulb"),
+  require("custom.lightbulb"),
 	require("custom.various-textobjs"),
 	require("custom.nvim-ts-rainbow2"),
 	require("custom.mini"),

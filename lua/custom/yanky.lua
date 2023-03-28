@@ -1,6 +1,6 @@
 return {
 	"gbprod/yanky.nvim",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		require("yanky").setup({
 			system_clipboard = {
