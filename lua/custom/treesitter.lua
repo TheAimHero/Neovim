@@ -9,6 +9,7 @@ return {
 			ensure_installed = {
 				"markdown",
 				"markdown_inline",
+				"comment",
 				"javascript",
 				"cpp",
 				"python",
@@ -18,7 +19,7 @@ return {
 				"bash",
 				"mermaid",
 			},
-			sync_install = true,
+			-- sync_install = true,
 			highlight = { enable = true, additional_vim_regex_highlighting = false },
 			indent = { enable = true },
 			incremental_selection = {

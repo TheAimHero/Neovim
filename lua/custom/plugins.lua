@@ -50,7 +50,10 @@ require("lazy").setup({
 	require("custom.window-picker"),
 	require("custom.wsl-clip"),
 
+	{ "nvim-lua/plenary.nvim", lazy = true },
+
 	{ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" },
+
 	{
 		"folke/trouble.nvim",
 		config = true,
