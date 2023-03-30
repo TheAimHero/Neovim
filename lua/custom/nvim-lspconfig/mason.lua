@@ -1,8 +1,8 @@
 return {
 	"williamboman/mason.nvim",
-  version=false,
+	version = false,
 	cmd = { "Mason", "MasonInstall", "MasonUninstall" },
-  build=":MasonUpdate",
+	build = ":MasonUpdate",
 	config = function()
 		require("mason").setup({
 			ui = {

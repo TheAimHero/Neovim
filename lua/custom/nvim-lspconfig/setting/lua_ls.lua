@@ -12,9 +12,9 @@ require("lspconfig").lua_ls.setup({
 	cmd = { "lua-language-server" },
 	filetypes = { "lua" },
 	log_level = 2,
-  -- root_dir=function ()
-  --   return false
-  -- end,
+  root_dir=function ()
+    return false
+  end,
 	single_file_support = true,
 	settings = {
 		Lua = {
@@ -29,7 +29,7 @@ require("lspconfig").lua_ls.setup({
 			},
 			workspace = {
 				-- Make the server aware of Neovim runtime files
-				-- library = vim.api.nvim_get_runtime_file("", true),
+				library = vim.api.nvim_get_runtime_file("", true),
 			},
 			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
