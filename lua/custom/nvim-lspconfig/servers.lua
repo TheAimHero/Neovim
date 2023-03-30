@@ -1,6 +1,5 @@
 local servers = {
 	"hls",
-	"clangd",
 	"cssls",
 	"marksman",
 	"bashls",

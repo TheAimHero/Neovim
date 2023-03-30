@@ -1,4 +1,4 @@
-local lspconfig = require("lspconfig.configs")
+local lspconfig = require("lspconfig")
 local clangd_capabilities = require("custom.nvim-lspconfig.handlers").capabilities
 clangd_capabilities.textDocument.semanticHighlighting = true
 clangd_capabilities.offsetEncoding = "utf-8"

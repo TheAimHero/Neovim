@@ -15,15 +15,8 @@ return {
 			border = "single",
 			--add your sources here after install with mason
 			sources = {
-				formatting.clang_format.with({
-					-- extra_args = { "-style=file:/home/Vedant/Dotfiles/SavedFiles/clang-format.txt" },
-					filetypes = { "cpp" },
-				}),
-				formatting.stylua, --lua formatting
-				formatting.beautysh, --shell formatting
-				formatting.prettierd, --markdown html css formatting
-				formatting.fourmolu, --haskell formatting
-				formatting.yapf,
+				-- formatting.beautysh, --shell formatting
+				-- formatting.fourmolu, --haskell formatting
 
 				diagnostics.cspell.with({
 					--General spell check
@@ -36,5 +29,6 @@ return {
 				code_actions.eslint_d,
 			},
 		})
+		require("mason-null-ls").setup_handlers()
 	end,
 }
