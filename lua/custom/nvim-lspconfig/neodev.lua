@@ -1,6 +1,6 @@
 return {
 	"folke/neodev.nvim",
-	enabled = false,
-	ft = "lua",
+	enabled = true,
+	event = "InsertEnter",
 	config = true,
 }

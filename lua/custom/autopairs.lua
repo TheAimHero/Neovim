@@ -1,8 +1,12 @@
 return {
 	"windwp/nvim-autopairs",
-	event = "User FileOpened",
-	enabled = false,
+	event = "InsertEnter",
+	enabled = true,
 	config = function()
+		local cmp = require("cmp")
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		require("nvim-autopairs").setup({})
+		require("custom.completion.cmd_cmp")
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }

@@ -30,7 +30,7 @@ require("lazy").setup({
 	require("custom.auto-save"),
 	require("custom.project"),
 	require("custom.bufferline"),
-  require("custom.lightbulb"),
+	require("custom.lightbulb"),
 	require("custom.various-textobjs"),
 	require("custom.nvim-ts-rainbow2"),
 	require("custom.mini"),
@@ -110,13 +110,14 @@ require("lazy").setup({
 	},
 	{
 		"simrat39/symbols-outline.nvim",
-		config = true,
 		cmd = "SymbolsOutline",
-		opts = {
-			width = 1,
-			auto_close = true,
-			auto_preview = false,
-		},
+		config = function()
+			require("symbols-outline").setup({
+				relative_width = true,
+				width = 25,
+				auto_close = false,
+			})
+		end,
 	},
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 
@@ -166,17 +167,19 @@ require("lazy").setup({
 	--Window
 	{
 		"anuvyklack/windows.nvim",
-		config = true,
 		event = "WinNew",
 		cmd = { "WindowsEqualize", "WindowsMaximize" },
 		dependencies = {
 			{ "anuvyklack/middleclass" },
 		},
-		opts = {
-			ignore = {
-				filetype = {},
-			},
-		},
+		config = function()
+			require("windows").setup({
+				ignore = {
+					buftype = { "quickfix", "nofile" },
+					filetype = { "Outline", "NvimTree", "neo-tree", "undotree", "gundo" },
+				},
+			})
+		end,
 	},
 
 	--Preview
