@@ -3,7 +3,7 @@ return {
 	branch = "main",
 	event = { "CmdlineEnter", "User FileOpened" },
 	config = function()
-		require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
+		-- require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } })
 
 		require("mini.ai").setup()
 
