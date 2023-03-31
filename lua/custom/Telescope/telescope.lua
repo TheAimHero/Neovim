@@ -13,10 +13,19 @@ return {
 		local actions = require("telescope.actions")
 		require("telescope").setup({
 			defaults = {
-				-- Default configuration for telescope goes here:
-				-- config_key = value,
 				winblend = 20,
 				pumblend = 20,
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+					"--hidden",
+					"--glob=!.git/",
+				},
 				file_ignore_patterns = {
 					".git/",
 					".cache",
@@ -31,6 +40,7 @@ return {
 				},
 				path_display = { truncate = 5 },
 				hidden = true,
+				color_devicons = true,
 				mappings = {
 					i = {
 						["<C-n>"] = actions.cycle_history_next,
@@ -46,9 +56,16 @@ return {
 				find_files = {
 					find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--color=auto" },
 					path_display = { "truncate = 5" },
+					hidden = true,
 				},
-				live_grep = { additional_args = { "--hidden", "--ignore-case" } },
+				live_grep = {
+					additional_args = { "--hidden", "--ignore-case" },
+					only_sort_text = true,
+				},
 				buffers = { path_display = { "tail" } },
+				colorscheme = {
+					enable_preview = true,
+				},
 			},
 
 			extensions = {

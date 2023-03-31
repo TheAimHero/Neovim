@@ -12,7 +12,8 @@ return {
 				emoji = {
 					action = function(emoji)
 						vim.fn.setreg("*", emoji.value)
-						print([[Press p or "*p to paste this emoji]] .. emoji.value)
+						---@diagnostic disable-next-line: param-type-mismatch
+						vim.notify([[Press p or "*p to paste this emoji]] .. emoji.value, "info", { title = "Emoji" })
 						-- insert emoji when picked
 						vim.api.nvim_put({ emoji.value }, "c", false, true)
 					end,
@@ -20,7 +21,8 @@ return {
 				glyph = {
 					action = function(glyph)
 						vim.fn.setreg("*", glyph.value)
-						print([[Press p or "*p to paste this glyph]] .. glyph.value)
+						---@diagnostic disable-next-line: param-type-mismatch
+						vim.notify([[Press p or "*p to paste this glyph]] .. glyph.value, "info", { title = "Glyph" })
 						-- insert glyph when picked
 						vim.api.nvim_put({ glyph.value }, "c", false, true)
 					end,

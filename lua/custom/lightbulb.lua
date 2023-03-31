@@ -1,6 +1,6 @@
 return {
 	"kosayoda/nvim-lightbulb",
-	ft = { "javascript" },
+	ft = { "javascript", "lua" },
 	dependencies = "antoinemadec/FixCursorHold.nvim",
 	config = function()
 		require("nvim-lightbulb").setup({
