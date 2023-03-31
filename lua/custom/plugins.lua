@@ -38,7 +38,7 @@ require("lazy").setup({
 	require("custom.nvim-lspconfig"),
 	require("custom.recorder"),
 	require("custom.substitute"),
-	require("custom.telescope"),
+	require("custom.Telescope"),
 	require("custom.zen-mode"),
 	require("custom.yanky"),
 	require("custom.nvim-hlslens"),
@@ -88,7 +88,7 @@ require("lazy").setup({
 	{
 		"numToStr/Comment.nvim",
 		config = true,
-		event = "User FileOpened",
+		-- event = "User FileOpened",
 		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
 	},
 	{
@@ -208,7 +208,16 @@ require("lazy").setup({
 	--Colorschemes
 	{
 		"navarasu/onedark.nvim",
-		event = "CmdlineEnter",
-		dependencies = { "LunarVim/lunar.nvim", "folke/tokyonight.nvim", "EdenEast/nightfox.nvim", "ray-x/starry.nvim" },
+		keys = {
+			{ " Ts", "<cmd>Telescope colorscheme<cr>" },
+			{ " Tp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" },
+		},
+		dependencies = {
+			"LunarVim/lunar.nvim",
+			"folke/tokyonight.nvim",
+			"telescope.nvim",
+			"EdenEast/nightfox.nvim",
+			"ray-x/starry.nvim",
+		},
 	},
 }, require("custom.lazy"))

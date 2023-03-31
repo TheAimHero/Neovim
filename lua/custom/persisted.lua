@@ -1,6 +1,8 @@
 return {
 	"olimorris/persisted.nvim",
+	dependencies = "telescope.nvim",
 	cmd = { "SessionSave" },
+	keys = { { " ul", "<cmd>Telescope persisted<cr>", desc = "List sessions" } },
 	config = function()
 		require("persisted").setup({
 			save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
@@ -17,5 +19,6 @@ return {
 				reset_prompt_after_deletion = true, -- whether to reset prompt after session deleted
 			},
 		})
+		require("telescope").load_extension("persisted")
 	end,
 }

@@ -1,6 +1,8 @@
 return {
 	"gbprod/yanky.nvim",
-	event = "User FileOpened",
+	dependencies = { "telescope.nvim" },
+	keys = { { " sy", "<cmd>Telescope yank_history<cr>", desc = "Yank History" } },
+	lazy = true,
 	config = function()
 		require("yanky").setup({
 			system_clipboard = {
@@ -18,5 +20,6 @@ return {
 				timer = 500,
 			},
 		})
+		require("telescope").load_extension("yank_history")
 	end,
 }

@@ -1,6 +1,6 @@
 return {
 	"ahmedkhalf/project.nvim",
-	event = "VimEnter",
+	event = "VeryLazy",
 	config = function()
 		require("project_nvim").setup({
 			-- Manual mode doesn't automatically change your root directory, so you have
@@ -19,7 +19,7 @@ return {
 			ignore_lsp = {},
 			-- Don't calculate root dir on specific directories
 			-- Ex: { "~/.cargo/*", ... }
-			exclude_dirs = { "/home/Vedant","/home/vedant" },
+			exclude_dirs = { "/home/Vedant", "/home/vedant" },
 			-- Show hidden files in telescope
 			show_hidden = true,
 			-- When set to false, you will get a message when project.nvim changes your

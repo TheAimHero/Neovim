@@ -12,6 +12,7 @@ return {
 				enabled_commands = false,
 			},
 		},
+		require("custom.dap.telescope-dap"),
 	},
 	config = function()
 		require("custom.dap.nvim-dap")
