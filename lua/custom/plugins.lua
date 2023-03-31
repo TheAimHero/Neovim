@@ -48,7 +48,7 @@ require("lazy").setup({
 	require("custom.persisted"),
 	require("custom.alpha"),
 	require("custom.window-picker"),
-	require("custom.wsl-clip"),
+  require("custom.neo_tree"),
 
 	{ "nvim-lua/plenary.nvim" },
 
