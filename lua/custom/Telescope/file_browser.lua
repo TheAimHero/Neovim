@@ -1,6 +1,5 @@
 return {
 	"nvim-telescope/telescope-file-browser.nvim",
-	lazy = true,
 	keys = { { " e", "<cmd>Telescope file_browser<cr>", desc = "file_browser" } },
 	dependencies = { "telescope.nvim" },
 	config = function()

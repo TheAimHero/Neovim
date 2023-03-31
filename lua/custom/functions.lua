@@ -67,6 +67,7 @@ M.disable_table = {
 	"toggleterm",
 	"DiffviewFileHistory",
 	"diff",
+	"neo-tree",
 	"DiffviewFiles",
 	"lazy",
 	"mason",
@@ -80,7 +81,7 @@ M.disable_table = {
 	"man",
 	"terminal",
 	"qf",
-  "nowrite",
+	"nowrite",
 }
 
 local function file_bool(name)
