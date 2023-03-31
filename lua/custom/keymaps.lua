@@ -11,6 +11,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 --Normal Mode
+keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
+keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 
 --Cycle between git hunks
 keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", opts)
@@ -87,7 +93,6 @@ keymap("v", ">", ">gv", opts)
 keymap("x", "p", "<Plug>(YankyPutAfter)", opts)
 keymap("x", "P", "<Plug>(YankyPutBefore)", opts)
 keymap("x", "y", "<Plug>(YankyYank)", opts)
-
 
 keymap("t", "<C-h>", "<C-\\><C-N><C-h>", opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-j>", opts)

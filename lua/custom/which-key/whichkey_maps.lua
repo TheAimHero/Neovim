@@ -1,21 +1,21 @@
 local wk = require("which-key")
 wk.register({
-	e = { "<cmd>Telescope file_browser <cr>", "File Browser" },
+	e = { "File Browser" },
 	c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	u = {
 		name = "Utils",
 		r = { "Advanced Replace" },
-		l = { "<cmd>Telescope persisted<cr>", "List Session" },
+		l = { "List Session" },
 		b = { "<cmd>Telescope bookmarks<cr>", "List Bookmarks" },
-		e = { "<cmd>Telescope emoji<cr>", "Emoji" },
-		g = { "<cmd>Telescope glyph<cr>", "Glyph" },
+		e = { "Emoji" },
+		g = { "Glyph" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
 	},
 	s = {
 		name = "Search", -- optional group name
 		w = { "<cmd>Telescope find_files hidden=true<cr>", "Workspace" }, -- create a binding with label
-		f = { " <cmd>Telescope adjacent hidden=true <cr>", "Find File" }, -- create a binding with label
+		f = { "Find File" }, -- create a binding with label
 		r = { "<cmd>Telescope oldfiles hidden=true<cr>", "Recent Files" },
 		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy find file" },
@@ -23,15 +23,15 @@ wk.register({
 			"<cmd>Telescope spell_suggest results_title=false layout_strategy=cursor layout_config={width=30,height=9} <cr>",
 			"Spell Suggest",
 		},
-		y = { "<cmd>Telescope yank_history previewer=false<cr>", "Yank History" },
+		y = { "Yank History" },
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
-		u = { "<cmd>Telescope undo<cr>", "Undo History" },
+		u = { "Undo History" },
 	},
 	T = {
 		name = "Themes",
-		s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme Search" },
+		s = { "Colorscheme Search" },
 		p = {
-			"<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+			
 			"Colorscheme with Preview",
 		},
 	},
@@ -43,8 +43,8 @@ wk.register({
 		s = { "<cmd>SymbolsOutline<cr>", "Document Symbols" },
 		f = { "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", "Format" },
 		q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-		t = { "<cmd>Telescope ToggleLSP<cr>", "Lsp Toggle" },
-		n = { "<cmd>Telescope ToggleNullLSP<cr>", "Lsp Toggle" },
+		t = { "Lsp Toggle" },
+		n = { "Null-ls Lsp Toggle" },
 	},
 	g = {
 		name = "Git",
