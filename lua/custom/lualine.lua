@@ -1,4 +1,5 @@
 local function diff_source()
+	---@diagnostic disable-next-line: undefined-field
 	local gitsigns = vim.b.gitsigns_status_dict
 	if gitsigns then
 		return {
@@ -60,8 +61,8 @@ return {
 					{
 						"os.date('%I:%M %p')",
 						icons_enabled = true,
+						color = { fg = "#ff9e64" },
 						icon = "祥",
-						color = "DiagnosticSignInfo",
 					},
 					{
 						require("lazy.status").updates,

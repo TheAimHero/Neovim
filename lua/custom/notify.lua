@@ -23,6 +23,5 @@ return {
 			timeout = 2000,
 			top_down = true,
 		})
-		require("telescope").load_extension("notify")
 	end,
 }

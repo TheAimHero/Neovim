@@ -1,13 +1,12 @@
 local wk = require("which-key")
 wk.register({
-	e = { "File Browser" },
+	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
 	c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	u = {
 		name = "Utils",
 		r = { "Advanced Replace" },
 		l = { "List Session" },
-		b = { "<cmd>Telescope bookmarks<cr>", "List Bookmarks" },
 		e = { "Emoji" },
 		g = { "Glyph" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
@@ -30,10 +29,7 @@ wk.register({
 	T = {
 		name = "Themes",
 		s = { "Colorscheme Search" },
-		p = {
-			
-			"Colorscheme with Preview",
-		},
+		p = { "Colorscheme with Preview" },
 	},
 	l = {
 		name = "LSP",

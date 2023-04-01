@@ -6,4 +6,5 @@ return {
 	-- require("custom.Telescope.file_browser"),
 	require("custom.Telescope.lsp-toggle"),
 	require("custom.Telescope.adjacent"),
+	require("custom.Telescope.bookmarks"),
 }

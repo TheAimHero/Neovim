@@ -1,6 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v2.x",
+	cmd = "NeoTreeFocusToggle",
 	dependencies = { "MunifTanjim/nui.nvim" },
 	config = function()
 		require("neo-tree").setup({
@@ -70,10 +71,7 @@ return {
 					nowait = true,
 				},
 				mappings = {
-					["<space>"] = {
-						"toggle_node",
-						nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-					},
+					["<space>"] = "",
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
 					["<esc>"] = "revert_preview",
@@ -81,8 +79,6 @@ return {
 					["l"] = "focus_preview",
 					["S"] = "open_split",
 					["s"] = "open_vsplit",
-					-- ["S"] = "split_with_window_picker",
-					-- ["s"] = "vsplit_with_window_picker",
 					["t"] = "open_tabnew",
 					-- ["<cr>"] = "open_drop",
 					-- ["t"] = "open_tab_drop",

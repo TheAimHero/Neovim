@@ -7,7 +7,6 @@ return {
 		{ "prochri/telescope-all-recent.nvim" },
 		{ "tsakirist/telescope-lazy.nvim" },
 		{ "paopaol/telescope-git-diffs.nvim" },
-		{ "dhruvmanila/telescope-bookmarks.nvim" },
 	},
 	config = function()
 		local actions = require("telescope.actions")
@@ -64,12 +63,6 @@ return {
 					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 					-- the default case_mode is "smart_case"
 				},
-				bookmarks = {
-					selected_browser = "firefox",
-					full_path = "/home/Vedant/.mozilla/firefox/a96czeoi.default/places.sqlite",
-					profile_name = "default-release",
-					url_open_command = "xdg-open",
-				},
 			},
 		})
 
@@ -79,6 +72,6 @@ return {
 		extension("projects")
 		extension("lazy")
 		extension("git_diffs")
-		extension("bookmarks")
+		extension("notify")
 	end,
 }
