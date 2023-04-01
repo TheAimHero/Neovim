@@ -1,6 +1,7 @@
 return {
 	"gbprod/substitute.nvim",
-	event = "User FileOpened",
+	-- event = "User FileOpened",
+	keys = { { "s", mode = { "n", "v", "x" } } },
 	config = function()
 		require("substitute").setup({
 			on_substitute = require("yanky.integration").substitute(),

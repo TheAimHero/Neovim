@@ -6,6 +6,11 @@ return function()
 		on_attach = function(c, b)
 			c.server_capabilities.documentFormattingProvider = false
 			require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
+			require("lsp_signature").on_attach({
+				floating_window = false,
+				hint_enable = true,
+				hint_prefix = "",
+			}, b)
 		end,
 		capabilities = clangd_capabilities,
 		cmd = { "clangd" },
