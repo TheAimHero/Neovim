@@ -18,7 +18,7 @@ return function()
 			clangdFileStatus = true,
 			usePlaceholders = true,
 			completeUnimported = true,
-			semanticHighlighting = true,
+			semanticHighlighting = false,
 		},
 	})
 end

@@ -5,11 +5,6 @@ return {
 	config = function()
 		require("mini.ai").setup()
 
-		require("mini.jump").setup({
-			delay = { highlight = 50, idle_stop = 2000 },
-			mappings = { repeat_jump = "" },
-		})
-
 		require("mini.indentscope").setup({
 			draw = { delay = 20 },
 			mappings = {

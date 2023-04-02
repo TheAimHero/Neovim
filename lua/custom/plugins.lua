@@ -48,7 +48,8 @@ require("lazy").setup({
 	require("custom.persisted"),
 	require("custom.alpha"),
 	require("custom.window-picker"),
-  require("custom.neo_tree"),
+	require("custom.neo_tree"),
+	require("custom.quick_scope"),
 
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
@@ -102,7 +103,7 @@ require("lazy").setup({
 		build = "bash ./install.sh",
 		config = true,
 	},
-	{ "kkharji/sqlite.lua" },
+	{ "kkharji/sqlite.lua", lazy = true },
 	{ "famiu/bufdelete.nvim", event = "VeryLazy" },
 	{
 		"Wansmer/treesj",
@@ -132,7 +133,6 @@ require("lazy").setup({
 		opts = {
 			disabled_filetypes = {
 				"help",
-				"lua",
 				"text",
 				"markdown",
 				"alpha",

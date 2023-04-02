@@ -6,6 +6,7 @@ require("lspconfig").lua_ls.setup({
 			hint_enable = true,
 			hint_prefix = "",
 		}, b)
+    require("lsp-inlayhints").on_attach(c, b)
 		require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
 	end,
 	capabilities = require("custom.nvim-lspconfig.handlers").capabilities,

@@ -9,7 +9,7 @@ return {
 					return " "
 				end,
 				dim = 0.18,
-				cleaning_interval = 1000,
+				cleaning_interval = 0,
 			},
 			trigger_events = { "CmdlineEnter" },
 			callbacks = {

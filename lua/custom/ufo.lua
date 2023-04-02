@@ -39,7 +39,7 @@ return {
 			git = "",
 		}
 
-		local opts = { noremap = true, silent = true }
+		local opts = { noremap = false, silent = true }
 		local keymap = vim.keymap.set
 		--Folds
 		keymap("n", "zR", require("ufo").openAllFolds, opts)

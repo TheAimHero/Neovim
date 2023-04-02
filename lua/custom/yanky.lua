@@ -1,6 +1,6 @@
 return {
 	"gbprod/yanky.nvim",
-	dependencies = { "telescope.nvim" },
+	dependencies = { "telescope.nvim", "sqlite.lua" },
 	event = "User FileOpened",
 	config = function()
 		require("yanky").setup({
