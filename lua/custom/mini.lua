@@ -5,20 +5,6 @@ return {
 	config = function()
 		require("mini.ai").setup()
 
-		require("mini.indentscope").setup({
-			draw = { delay = 20 },
-			mappings = {
-				-- Textobjects
-				object_scope = "",
-				object_scope_with_border = "",
-				-- Motions (jump to respective border line; if not present - body line)
-				goto_top = "",
-				goto_bottom = "",
-			},
-			options = { indent_at_cursor = false, try_as_border = true },
-			symbol = "│",
-		})
-
 		require("mini.cursorword").setup()
 
 		require("mini.move").setup()

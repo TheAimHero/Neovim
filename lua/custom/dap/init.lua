@@ -8,7 +8,7 @@ return {
 			config = true,
 			lazy = true,
 			opts = {
-				all_references = true,
+				all_references = false,
 				enabled_commands = false,
 			},
 		},

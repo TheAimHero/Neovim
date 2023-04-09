@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.catppuccin"),
+	require("custom.marks"),
 	require("custom.treesitter"),
 	require("custom.gitsigns"),
 	require("custom.ssr"),
@@ -30,12 +31,12 @@ require("lazy").setup({
 	require("custom.auto-save"),
 	require("custom.project"),
 	require("custom.bufferline"),
-	require("custom.lightbulb"),
 	require("custom.various-textobjs"),
 	require("custom.nvim-ts-rainbow2"),
 	require("custom.mini"),
 	require("custom.fidget"),
 	require("custom.nvim-lspconfig"),
+	require("custom.statuscol"),
 	require("custom.recorder"),
 	require("custom.substitute"),
 	require("custom.Telescope"),
@@ -50,24 +51,10 @@ require("lazy").setup({
 	require("custom.window-picker"),
 	require("custom.neo_tree"),
 	require("custom.quick_scope"),
+	require("custom.trouble"),
 
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
-	{ "weilbith/nvim-code-action-menu", cmd = "CodeActionMenu" },
-
-	{
-		"folke/trouble.nvim",
-		config = true,
-		cmd = "TroubleToggle",
-		opts = { position = "right", width = 45, use_diagnostic_signs = true },
-	},
-	{
-		"ErichDonGubler/lsp_lines.nvim",
-		enabled = false,
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	},
 	{
 		"shellRaining/hlchunk.nvim",
 		enabled = false,
@@ -82,7 +69,7 @@ require("lazy").setup({
 	--General
 	{
 		"axieax/urlview.nvim",
-		event = "User FileOpened",
+		cmd = "UrlView",
 		config = true,
 		opts = { default_action = "firefox", default_picker = "telescope" },
 	},
@@ -97,6 +84,7 @@ require("lazy").setup({
 		config = true,
 		event = "User FileOpened",
 	},
+	{ "lukas-reineke/indent-blankline.nvim", event = "User FileOpened" },
 	{
 		"michaelb/sniprun",
 		cmd = "SnipRun",
@@ -104,7 +92,7 @@ require("lazy").setup({
 		config = true,
 	},
 	{ "kkharji/sqlite.lua", lazy = true },
-	{ "famiu/bufdelete.nvim", event = "VeryLazy" },
+	{ "famiu/bufdelete.nvim", cmd = { "Bdelete" } },
 	{
 		"Wansmer/treesj",
 		name = "treesj",

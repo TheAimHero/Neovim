@@ -22,11 +22,6 @@ keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
 keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", opts)
 keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", opts)
 
---Dap keys
-keymap("n", "[e", "<cmd>lua require'dap'.step_back()<cr>")
-keymap("n", "]e", "<cmd>lua require'dap'.step_into()<cr>")
-keymap("n", "]E", "<cmd>lua require'dap'.step_over()<cr>")
-keymap("n", "[E", "<cmd>lua require'dap'.step_out()<cr>")
 keymap("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual selection" })
 
 --Move between windows
@@ -51,7 +46,6 @@ keymap({ "n", "x" }, "<leader>ur", function()
 	require("ssr").open()
 end, opts)
 
---Toggle Stuff
 
 --Resize
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

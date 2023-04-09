@@ -2,7 +2,6 @@ return {
 	"rcarriga/nvim-notify",
 	event = "VeryLazy",
 	enabled = true,
-	dependencies = "telescope.nvim",
 	lazy = true,
 	config = function()
 		vim.notify = require("notify")
@@ -24,6 +23,5 @@ return {
 			timeout = 2000,
 			top_down = true,
 		})
-		require("telescope").load_extension("notify")
 	end,
 }

@@ -2,7 +2,6 @@ return {
 	"kevinhwang91/nvim-ufo",
 	event = { "User FileOpened" },
 	enabled = true,
-	keys = { "zc", "zo", "zr", "zm", "zk" },
 	dependencies = "kevinhwang91/promise-async",
 	config = function()
 		local handler = function(virtText, lnum, endLnum, width, truncate)

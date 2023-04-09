@@ -51,7 +51,7 @@ return {
 				markdown = true,
 				dap = true,
 				symbols_outline = true,
-				lsp_trouble = true,
+				-- lsp_trouble = true,
 				which_key = true,
 				native_lsp = {
 					enabled = true,

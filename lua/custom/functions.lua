@@ -93,17 +93,17 @@ local function file_bool(name)
 	return false
 end
 
-M.Del = function()
-	local name_file = vim.api.nvim_exec("set filetype?", true)
-	local status
-	if file_bool(name_file) then
-		vim.cmd("q")
-	else
-		status = pcall(vim.cmd, "Bdelete")
-	end
-	if status == false then
-		vim.cmd("echo '  save the file first  '")
-	end
-end
+-- M.Del = function()
+-- 	local name_file = vim.api.nvim_exec("set filetype?", true)
+-- 	local status
+-- 	if file_bool(name_file) then
+-- 		vim.cmd("q")
+-- 	else
+-- 		status = pcall(vim.cmd, "Bdelete")
+-- 	end
+-- 	if status == false then
+-- 		vim.cmd("echo '  save the file first  '")
+-- 	end
+-- end
 
 return M

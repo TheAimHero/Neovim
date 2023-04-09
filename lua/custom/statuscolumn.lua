@@ -9,26 +9,27 @@ function M.get_signs()
 end
 
 function M.column()
-	local sign, git_sign, dap
+	local sign, git_sign, dap, marks
 	for _, s in ipairs(M.get_signs()) do
 		if s.name:find("GitSign") then
 			git_sign = s
 		elseif s.name:find("Dap") then
 			dap = s
+		elseif s.name:find("Marks") then
+			marks = s
 		else
 			sign = s
 		end
 	end
 	local components = {
-		[[%C]],
 		sign and ("%#" .. sign.texthl .. "#" .. sign.text .. "%*") or "",
 		dap and ("%#" .. dap.texthl .. "#" .. dap.text .. "%*") or "",
+		marks and ("%#" .. marks.texthl .. "#" .. marks.text .. "%*") or "  ",
 		[[%=]],
 		[[%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''} ]],
 		git_sign and ("%#" .. git_sign.texthl .. "#" .. git_sign.text .. "%*") or "  ",
 	}
 	return table.concat(components, "")
 end
-
 
 return M

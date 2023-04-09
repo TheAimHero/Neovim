@@ -1,7 +1,8 @@
 local wk = require("which-key")
 wk.register({
 	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
-	c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
+	-- c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
+	c = { "<cmd>Bdelete<CR>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	u = {
 		name = "Utils",
@@ -92,12 +93,13 @@ wk.register({
 			"  <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
 			"Conditional Breakpoint",
 		},
-		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		c = { "<cmd>lua require'dap'.continue()<cr>", "Start/Continue" },
 		C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
 		d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
 		g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
 		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-		s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
+		s = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+		S = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
 		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
 		U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
 	},

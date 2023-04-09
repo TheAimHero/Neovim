@@ -19,10 +19,11 @@ M.setup = function()
 
 	vim.diagnostic.config({
 		virtual_text = false, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
-		update_in_insert = false,
+		-- signs = {
+		-- 	active = signs, -- show signs
+		-- },
+		signs = false,
+		update_in_insert = true,
 		underline = false,
 		severity_sort = true,
 		float = {

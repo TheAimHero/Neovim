@@ -1,10 +1,37 @@
 return {
-	require("custom.nvim-lspconfig.neodev"),
+	-- require("custom.nvim-lspconfig.neodev"),
 	require("custom.nvim-lspconfig.nvim_lspconfig"),
 	require("custom.nvim-lspconfig.mason"),
 	require("custom.nvim-lspconfig.mason-lspconfig"),
-	require("custom.nvim-lspconfig.mason-null-ls"),
 	require("custom.nvim-lspconfig.null-ls"),
+	require("custom.nvim-lspconfig.mason-null-ls"),
 	require("custom.nvim-lspconfig.inlay_hints"),
-	{ "ray-x/lsp_signature.nvim", lazy = true },
+	require("custom.lightbulb"),
+	{
+		"ray-x/lsp_signature.nvim",
+		lazy = true,
+		config = function()
+			require("lsp_signature").setup({
+				floating_window = false,
+				hint_enable = true,
+				hint_prefix = "",
+			})
+		end,
+	},
+	{
+		"ErichDonGubler/lsp_lines.nvim",
+		event = "User FileOpened",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	},
+	{
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+		config = function()
+			vim.g.code_action_menu_show_details = true
+			vim.g.code_action_menu_show_diff = true
+			vim.g.code_action_menu_show_action_kind = true
+		end,
+	},
 }

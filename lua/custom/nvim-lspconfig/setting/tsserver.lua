@@ -2,11 +2,6 @@ return function()
 	require("lspconfig").tsserver.setup({
 		on_attach = function(c, b)
 			require("lsp-inlayhints").on_attach(c, b)
-			require("lsp_signature").on_attach({
-				floating_window = false,
-				hint_enable = true,
-				hint_prefix = "",
-			}, b)
 			c.server_capabilities.documentFormattingProvider = false
 			require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
 		end,

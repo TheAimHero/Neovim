@@ -1,7 +1,6 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
 	lazy = true,
-	dependencies = { "mason-null-ls.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
 		local formatting = null_ls.builtins.formatting
@@ -23,6 +22,6 @@ return {
 				code_actions.eslint_d,
 			},
 		})
-		require("mason-null-ls").setup_handlers()
+    require("mason-null-ls").setup()
 	end,
 }

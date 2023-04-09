@@ -43,7 +43,9 @@ autocmd("BufWinEnter", {
 	pattern = "*.*",
 	callback = function()
 		vim.cmd.loadview({ mods = { emsg_silent = true } })
+		vim.cmd("delm!")
 		vim.cmd("lua require('null-ls').disable('cspell')")
+		vim.cmd("delm!")
 	end,
 	group = save_fold,
 })
@@ -59,14 +61,6 @@ autocmd("BufReadPost", {
 	end,
 })
 
---OpenMarkdownPreview in new firefox window
--- vim.cmd([[
--- function OpenMarkdownPreview (url)
---   execute "silent ! pidof firefox || firefox & sleep 1 && firefox " . a:url
--- endfunction
--- ]])
--- vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
-
 augroup("_file_opened", { clear = true })
 autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
 	group = "_file_opened",
@@ -79,19 +73,21 @@ autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
 	end,
 })
 
--- autocmd("BufEnter", {
--- 	desc = "Open Neo-Tree on startup with directory",
--- 	group = augroup("neotree_start", { clear = true }),
--- 	callback = function()
--- 		if package.loaded["neo-tree"] then
--- 			vim.api.nvim_del_augroup_by_name("neotree_start")
--- 		else
--- 			local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
--- 			if stats and stats.type == "directory" then
--- 				require("neo-tree")
--- 				vim.api.nvim_del_augroup_by_name("neotree_start")
--- 				vim.api.nvim_exec_autocmds("BufEnter", {})
--- 			end
--- 		end
--- 	end,
--- })
+local function is_directory(path)
+	local stat = vim.loop.fs_stat(path)
+	return stat and stat.type == "directory" or false
+end
+
+augroup("_dir_opened", { clear = true })
+autocmd("BufEnter", {
+	group = "_dir_opened",
+	once = true,
+	callback = function(args)
+		local bufname = vim.api.nvim_buf_get_name(args.buf)
+		if is_directory(bufname) then
+			vim.api.nvim_del_augroup_by_name("_dir_opened")
+			vim.cmd("do User DirOpened")
+			vim.api.nvim_exec_autocmds("BufEnter", {})
+		end
+	end,
+})

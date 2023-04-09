@@ -2,6 +2,7 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v2.x",
 	cmd = "NeoTreeFocusToggle",
+	event = "User DirOpened",
 	dependencies = { "MunifTanjim/nui.nvim" },
 	config = function()
 		require("neo-tree").setup({
@@ -11,13 +12,14 @@ return {
 			enable_diagnostics = true,
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 			sort_case_insensitive = false, -- used when sorting files and directories in the tree
+			event_handlers = {},
 			default_component_configs = {
 				container = {
 					enable_character_fade = true,
 				},
 				indent = {
 					indent_size = 2,
-					padding = 1, -- extra padding on left hand side
+					padding = 0, -- extra padding on left hand side
 					-- indent guides
 					with_markers = true,
 					indent_marker = "│",
@@ -65,7 +67,7 @@ return {
 			},
 			window = {
 				position = "left",
-				width = 40,
+				width = 30,
 				mapping_options = {
 					noremap = true,
 					nowait = true,
@@ -73,25 +75,16 @@ return {
 				mappings = {
 					["<space>"] = "",
 					["<2-LeftMouse>"] = "open",
-					["<cr>"] = "open",
+					["l"] = "open",
 					["<esc>"] = "revert_preview",
 					["P"] = { "toggle_preview", config = { use_float = true } },
-					["l"] = "focus_preview",
-					["S"] = "open_split",
-					["s"] = "open_vsplit",
-					["t"] = "open_tabnew",
-					-- ["<cr>"] = "open_drop",
-					-- ["t"] = "open_tab_drop",
-					["w"] = "open_with_window_picker",
-					--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
-					["C"] = "close_node",
-					-- ['C'] = 'close_all_subnodes',
-					["z"] = "close_all_nodes",
-					--["Z"] = "expand_all_nodes",
+					["<C-x>"] = "open_split",
+					["<C-v>"] = "open_vsplit",
+					["<C-t>"] = "open_tabnew",
+					["zc"] = "close_node",
+					["zm"] = "close_all_nodes",
 					["a"] = {
 						"add",
-						-- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
-						-- some commands may take optional config options, see `:h neo-tree-mappings` for details
 						config = {
 							show_path = "none", -- "none", "relative", "absolute"
 						},
@@ -102,13 +95,6 @@ return {
 					["y"] = "copy_to_clipboard",
 					["x"] = "cut_to_clipboard",
 					["p"] = "paste_from_clipboard",
-					["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
-					-- ["c"] = {
-					--  "copy",
-					--  config = {
-					--    show_path = "none" -- "none", "relative", "absolute"
-					--  }
-					--}
 					["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
 					["q"] = "close_window",
 					["R"] = "refresh",
@@ -125,14 +111,14 @@ return {
 					hide_gitignored = true,
 					hide_hidden = true, -- only works on Windows for hidden files/directories
 					hide_by_name = {
-						--"node_modules"
+						"node_modules",
 					},
 					hide_by_pattern = { -- uses glob style patterns
 						--"*.meta",
 						--"*/src/*/tsconfig.json",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
-						--".gitignored",
+						".gitignored",
 					},
 					never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 						--".DS_Store",
@@ -144,7 +130,7 @@ return {
 				},
 				follow_current_file = true, -- This will find and focus the file in the active buffer every
 				-- time the current file is changed while the tree is open.
-				group_empty_dirs = false, -- when true, empty folders will be grouped together
+				group_empty_dirs = true, -- when true, empty folders will be grouped together
 				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens neo-tree
 				-- in whatever position is specified in window.position
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
@@ -154,7 +140,7 @@ return {
 				-- instead of relying on nvim autocmd events.
 				window = {
 					mappings = {
-						["<bs>"] = "navigate_up",
+						["h"] = "navigate_up",
 						["."] = "set_root",
 						["H"] = "toggle_hidden",
 						["/"] = "fuzzy_finder",
@@ -162,7 +148,7 @@ return {
 						["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
 						-- ["D"] = "fuzzy_sorter_directory",
 						["f"] = "filter_on_submit",
-						["<c-x>"] = "clear_filter",
+						["<C-h>"] = "clear_filter",
 						["[g"] = "prev_git_modified",
 						["]g"] = "next_git_modified",
 					},
@@ -176,7 +162,7 @@ return {
 				window = {
 					mappings = {
 						["bd"] = "buffer_delete",
-						["<bs>"] = "navigate_up",
+						["h"] = "navigate_up",
 						["."] = "set_root",
 					},
 				},

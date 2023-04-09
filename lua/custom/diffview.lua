@@ -108,8 +108,6 @@ return {
 					},
 					{ "n", "<C-w><C-f>", actions.goto_file_split, { desc = "Open the file in a new split" } },
 					{ "n", "<C-w>gf", actions.goto_file_tab, { desc = "Open the file in a new tabpage" } },
-					{ "n", "me", actions.focus_files, { desc = "Bring focus to the file panel" } },
-					{ "n", "mb", actions.toggle_files, { desc = "Toggle the file panel." } },
 					{ "n", "g<C-x>", actions.cycle_layout, { desc = "Cycle through available layouts." } },
 					{
 						"n",
@@ -122,13 +120,6 @@ return {
 						"]x",
 						actions.next_conflict,
 						{ desc = "In the merge-tool: jump to the next conflict" },
-					},
-					{ "n", "mg", actions.conflict_choose("ours"), { desc = "Choose the OURS version of a conflict" } },
-					{
-						"n",
-						"mh",
-						actions.conflict_choose("theirs"),
-						{ desc = "Choose the THEIRS version of a conflict" },
 					},
 					{ "n", "mcb", actions.conflict_choose("base"), { desc = "Choose the BASE version of a conflict" } },
 					{ "n", "mca", actions.conflict_choose("all"), { desc = "Choose all the versions of a conflict" } },

@@ -1,6 +1,6 @@
 return {
 	"chrisgrieser/nvim-recorder",
-	event = "VeryLazy",
+	event = "User FileOpened",
 	config = function()
 		-- default values
 		require("recorder").setup({
