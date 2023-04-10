@@ -52,6 +52,7 @@ require("lazy").setup({
 	require("custom.neo_tree"),
 	require("custom.quick_scope"),
 	require("custom.trouble"),
+  require("custom.tmux"),
 
 	{ "nvim-lua/plenary.nvim", lazy = true },
 

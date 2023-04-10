@@ -7,6 +7,7 @@ local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<C-a>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -24,12 +25,6 @@ keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = f
 
 keymap("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual selection" })
 
---Move between windows
-keymap("n", "<C-H>", "<C-w>h", { desc = "Focus on left window" })
-keymap("n", "<C-J>", "<C-w>j", { desc = "Focus on below window" })
-keymap("n", "<C-K>", "<C-w>k", { desc = "Focus on above window" })
-keymap("n", "<C-L>", "<C-w>l", { desc = "Focus on right window" })
-
 --Empty line above or below
 keymap("n", "gO", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 keymap("n", "go", "<cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
@@ -45,7 +40,6 @@ keymap("n", "U", "<C-r>", opts)
 keymap({ "n", "x" }, "<leader>ur", function()
 	require("ssr").open()
 end, opts)
-
 
 --Resize
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
