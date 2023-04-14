@@ -12,8 +12,7 @@ return {
 			bt_ignore = nil,
 			segments = {
 				{ text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
-				{ sign = { name = { "Dap" }, maxwidth = 1, colwidth = 2, auto = true } },
-				{ sign = { name = { "Marks" }, maxwidth = 1, colwidth = 2, auto = true } },
+				{ sign = { name = { "Marks", "Dap" }, maxwidth = 1, colwidth = 2, auto = true } },
 				{ text = { builtin.lnumfunc, " " }, condition = { true, builtin.not_empty } },
 				{ sign = { name = { "GitSigns" }, maxwidth = 1, colwidth = 2, auto = true } },
 			},

@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.catppuccin"),
+	require("custom.goto-preview"),
 	require("custom.marks"),
 	require("custom.treesitter"),
 	require("custom.gitsigns"),
@@ -52,7 +53,7 @@ require("lazy").setup({
 	require("custom.neo_tree"),
 	require("custom.quick_scope"),
 	require("custom.trouble"),
-  require("custom.tmux"),
+	require("custom.tmux"),
 
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
@@ -108,7 +109,8 @@ require("lazy").setup({
 			require("symbols-outline").setup({
 				relative_width = true,
 				width = 25,
-				auto_close = false,
+				auto_close = true,
+				autofold_depth = 2,
 			})
 		end,
 	},
@@ -172,14 +174,6 @@ require("lazy").setup({
 				},
 			})
 		end,
-	},
-
-	--Preview
-	{
-		"rmagatti/goto-preview",
-		lazy = true,
-		ft = "cpp",
-		config = true,
 	},
 
 	--Replace

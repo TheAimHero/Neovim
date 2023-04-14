@@ -23,7 +23,7 @@ wk.register({
 			"<cmd>Telescope spell_suggest results_title=false layout_strategy=cursor layout_config={width=30,height=9} <cr>",
 			"Spell Suggest",
 		},
-		y = { "Yank History" },
+		y = { "<cmd>Telescope yank_history<cr>", "Yank History" },
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
 		u = { "Undo History" },
 	},

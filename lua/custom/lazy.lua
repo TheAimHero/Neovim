@@ -4,7 +4,7 @@ return {
 		version = "*",
 	},
 	position = "center",
-	install = { colorscheme = { "catppuccin","lunar", "tokyonight-moon", "carbonfox", "habamax" } },
+	install = { colorscheme = { "catppuccin", "lunar", "tokyonight-moon", "carbonfox", "habamax" } },
 	checker = { enabled = true, frequency = 36000 },
 	-- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
 	ui = {

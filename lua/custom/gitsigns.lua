@@ -3,6 +3,8 @@ return {
 	cmd = "Gitsigns",
 	event = "User FileOpened",
 	config = function()
+		local keymap = vim.keymap.set
+		local opts = { noremap = true, silent = true }
 		require("gitsigns").setup({
 			signs = {
 				add = { text = "│" },
@@ -42,5 +44,7 @@ return {
 				col = 1,
 			},
 		})
+		keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", opts)
+		keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", opts)
 	end,
 }

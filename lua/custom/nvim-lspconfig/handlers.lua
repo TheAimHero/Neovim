@@ -23,7 +23,7 @@ M.setup = function()
 		-- 	active = signs, -- show signs
 		-- },
 		signs = false,
-		update_in_insert = true,
+		update_in_insert = false,
 		underline = false,
 		severity_sort = true,
 		float = {
