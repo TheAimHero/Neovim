@@ -11,17 +11,7 @@ keymap("", "<C-a>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
---Normal Mode
-keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
-keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
-keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
-keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
-keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
-keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
-
 --Cycle between git hunks
-keymap("n", "]g", "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", opts)
-keymap("n", "[g", "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", opts)
 
 keymap("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual selection" })
 
@@ -29,17 +19,8 @@ keymap("x", "g/", "<esc>/\\%V", { silent = false, desc = "Search inside visual s
 keymap("n", "gO", "<cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 keymap("n", "go", "<cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
 
--- Search visually selected text (slightly better than builtins in Neovim>=0.8)
-keymap("x", "*", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]])
-keymap("x", "#", [[y?\V<C-R>=escape(@", '?\')<CR><CR>]])
-
 -- Redo
 keymap("n", "U", "<C-r>", opts)
-
---Rename
-keymap({ "n", "x" }, "<leader>ur", function()
-	require("ssr").open()
-end, opts)
 
 --Resize
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -57,8 +38,6 @@ keymap("n", "np", "<cmd>nohlsearch<CR><Plug>(YankyPutIndentAfterLinewise)", opts
 keymap("n", "Np", "<cmd>nohlsearch<CR><Plug>(YankyPutIndentBeforeLinewise)", opts)
 
 --Goto-Preview keymaps
-keymap("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
-keymap("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
 
 -- Insert Mode
 -- Press jk fast to exit insert mode
@@ -70,11 +49,6 @@ keymap("i", "<C-Up>", ":resize -2<CR>", opts)
 keymap("i", "<C-Down>", ":resize +2<CR>", opts)
 keymap("i", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("i", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
 
 -- Visual Block Mode
 --Yanky keymaps

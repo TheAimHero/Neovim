@@ -1,6 +1,10 @@
 return {
 	"cshuaimin/ssr.nvim",
 	lazy = true,
+	keys = { { " ur", "<cmd>lua require('ssr').open()<cr>" } },
+	-- keymap({ "n", "x" }, "<leader>ur", function()
+	--   require("ssr").open()
+	-- end, opts)
 	config = function()
 		require("ssr").setup({
 			border = "single",

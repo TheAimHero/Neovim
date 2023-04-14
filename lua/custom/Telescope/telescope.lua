@@ -1,7 +1,8 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
-	version = "0.1.x",
+	-- version = "0.1.x",
+	version = false,
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		{ "prochri/telescope-all-recent.nvim" },
@@ -47,7 +48,7 @@ return {
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
 					},
-					n = { ["q"] = actions.close },
+					n = { ["q"] = actions.close, ["<C-c>"] = actions.close },
 				},
 			},
 
