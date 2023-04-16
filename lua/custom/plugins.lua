@@ -24,7 +24,6 @@ require("lazy").setup({
 	require("custom.completion"),
 	require("custom.diffview"),
 	require("custom.barbecue"),
-	require("custom.flatten"),
 	require("custom.which-key"),
 	require("custom.dap"),
 	require("custom.toggleterm"),

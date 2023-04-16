@@ -1,16 +1,16 @@
 local wk = require("which-key")
 wk.register({
 	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
-	-- c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
-	c = { "<cmd>Bdelete<CR>", "Close Buffer" },
-	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
+	-- c = { "<cmd>Bdelete<cr>", "Close Buffer" },
+	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
 		r = { "Advanced Replace" },
-		l = { "List Session" },
 		e = { "Emoji" },
 		g = { "Glyph" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
+    l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
 	},
 	s = {
 		name = "Search", -- optional group name
