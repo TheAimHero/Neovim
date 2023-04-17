@@ -6,9 +6,11 @@ return {
 		require("telescope").setup({
 			extensions = {
 				undo = {
-					side_by_side = true,
+					side_by_side = false,
 					mappings = {
 						i = {
+							["<cr>"] = require("telescope-undo.actions").yank_additions,
+							["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
 							["<C-u>"] = require("telescope-undo.actions").restore,
 						},
 					},

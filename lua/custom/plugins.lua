@@ -54,6 +54,8 @@ require("lazy").setup({
 	require("custom.trouble"),
 	require("custom.tmux"),
 
+	{ "tpope/vim-obsession" },
+
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	{
