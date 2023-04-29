@@ -20,6 +20,7 @@ return {
 			end,
 
 			["tsserver"] = require("custom.nvim-lspconfig.setting.tsserver"),
+      ["html"] = require("custom.nvim-lspconfig.setting.html"),
 			["lua_ls"] = require("custom.nvim-lspconfig.setting.lua_ls"),
 			["pyright"] = require("custom.nvim-lspconfig.setting.pyright"),
 			["clangd"] = require("custom.nvim-lspconfig.setting.clangd"),

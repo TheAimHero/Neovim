@@ -126,6 +126,7 @@ require("lazy").setup({
 			disabled_filetypes = {
 				"help",
 				"text",
+				"html",
 				"markdown",
 				"alpha",
 				"help",
@@ -139,7 +140,7 @@ require("lazy").setup({
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = "WinNew",
-		opts = { highlight = { fg = "#FF966C" } },
+		-- opts = { highlight = { fg = "#FF966C" } },
 	},
 
 	{
@@ -186,14 +187,14 @@ require("lazy").setup({
 		config = true,
 		name = "colorizer",
 		cmd = { "ColorizerToggle", "ColorizerAttachToBuffer" },
-		opts = { user_default_options = { names = false } },
+		opts = { user_default_options = { names = true } },
 	},
 
 	--Colorschemes
 	{
 		"navarasu/onedark.nvim",
 		keys = {
-			{ " Ts", "<cmd>Telescope colorscheme<cr>" },
+			{ " Ts", "<cmd>Telescope colorscheme preview=false<cr>" },
 			{ " Tp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" },
 		},
 		dependencies = {

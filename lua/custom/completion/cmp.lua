@@ -6,7 +6,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
+		-- "hrsh7th/cmp-path",
 		"petertriho/cmp-git",
 	},
 	config = function()
@@ -82,7 +82,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
-				{ name = "path" },
+				-- { name = "path" },
 			},
 			confirm_opts = {
 				behavior = cmp.ConfirmBehavior.Replace,

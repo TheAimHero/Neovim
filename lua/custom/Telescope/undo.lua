@@ -13,6 +13,11 @@ return {
 							["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
 							["<C-u>"] = require("telescope-undo.actions").restore,
 						},
+						n = {
+							["<cr>"] = require("telescope-undo.actions").yank_additions,
+							["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+							["<C-u>"] = require("telescope-undo.actions").restore,
+						},
 					},
 				},
 			},

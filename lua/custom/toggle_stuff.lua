@@ -29,6 +29,13 @@ keymap("n", "\\q", function()
 	vim.notify(string.format("Quick Scope %s", state_quickscope), "info", { title = "QuickScope" })
 end)
 
+local state_indentline = true
+keymap("n", "\\i", function()
+	vim.cmd("IndentBlanklineToggle")
+	state_indentline = not state_indentline
+	vim.notify(string.format("Indent Lines %s", state_indentline), "info", { title = "IndentBlankline" })
+end)
+
 local state_lsp_lines = true
 keymap("n", "\\d", function()
 	vim.cmd("lua require('lsp_lines').toggle()")
