@@ -108,10 +108,10 @@ require("lazy").setup({
 		cmd = "SymbolsOutline",
 		config = function()
 			require("symbols-outline").setup({
-				relative_width = true,
-				width = 25,
-				auto_close = true,
-				autofold_depth = 2,
+				-- relative_width = true,
+				-- width = 25,
+				-- auto_close = true,
+				-- autofold_depth = 2,
 			})
 		end,
 	},
@@ -145,7 +145,7 @@ require("lazy").setup({
 
 	{
 		"declancm/cinnamon.nvim",
-		enabled = true,
+		enabled = false,
 		config = true,
 		event = "User FileOpened",
 		opts = {
