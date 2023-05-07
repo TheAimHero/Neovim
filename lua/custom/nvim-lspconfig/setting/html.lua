@@ -1,12 +1,12 @@
 return function()
 	require("lspconfig").html.setup({
 		on_attach = function(c, b)
-			c.server_capabilities.documentFormattingProvider = false
+			-- c.server_capabilities.documentFormattingProvider = false
 			require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
 		end,
 		capabilities = require("custom.nvim-lspconfig.handlers").capabilities,
 		cmd = { "vscode-html-language-server", "--stdio" },
-		filetypes = { "html" },
+		filetypes = { "html", "ejs" },
 		init_options = {
 			configurationSection = { "html", "css", "javascript" },
 			embeddedLanguages = {

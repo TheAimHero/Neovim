@@ -37,6 +37,7 @@ return {
 					"%.mkv",
 					"%.mp4",
 					"%.zip",
+					"node_modules",
 				},
 				path_display = { truncate = 5 },
 				hidden = true,
@@ -91,5 +92,6 @@ return {
 		extension("lazy")
 		extension("git_diffs")
 		extension("notify")
+		extension("persisted")
 	end,
 }

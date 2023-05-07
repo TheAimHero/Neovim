@@ -14,7 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.catppuccin"),
+	require("custom.Noice"),
+	require("custom.hf"),
+	require("custom.Outline"),
+	require("custom.web_dev"),
 	require("custom.goto-preview"),
+	require("custom.neorg"),
+	require("custom.nvim-tree"),
 	require("custom.marks"),
 	require("custom.treesitter"),
 	require("custom.gitsigns"),
@@ -24,7 +30,6 @@ require("lazy").setup({
 	require("custom.completion"),
 	require("custom.diffview"),
 	require("custom.barbecue"),
-	require("custom.flatten"),
 	require("custom.which-key"),
 	require("custom.dap"),
 	require("custom.toggleterm"),
@@ -47,6 +52,7 @@ require("lazy").setup({
 	require("custom.autopairs"),
 	require("custom.lualine"),
 	require("custom.markdown"),
+	require("custom.refactor"),
 	require("custom.persisted"),
 	require("custom.alpha"),
 	require("custom.window-picker"),
@@ -54,6 +60,8 @@ require("lazy").setup({
 	require("custom.quick_scope"),
 	require("custom.trouble"),
 	require("custom.tmux"),
+
+	{ "tpope/vim-obsession" },
 
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
@@ -77,6 +85,7 @@ require("lazy").setup({
 	},
 	{
 		"numToStr/Comment.nvim",
+		enabled = true,
 		config = true,
 		-- event = "User FileOpened",
 		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
@@ -102,20 +111,7 @@ require("lazy").setup({
 		opts = { max_join_length = 12000 },
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
 	},
-	{
-		"simrat39/symbols-outline.nvim",
-		cmd = "SymbolsOutline",
-		config = function()
-			require("symbols-outline").setup({
-				relative_width = true,
-				width = 25,
-				auto_close = true,
-				autofold_depth = 2,
-			})
-		end,
-	},
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
-
 	--Ui
 	{
 		"m4xshen/smartcolumn.nvim",
@@ -123,8 +119,10 @@ require("lazy").setup({
 		event = "User FileOpened",
 		opts = {
 			disabled_filetypes = {
+				"norg",
 				"help",
 				"text",
+				"html",
 				"markdown",
 				"alpha",
 				"help",
@@ -136,14 +134,15 @@ require("lazy").setup({
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
+		enabled = false,
 		config = true,
 		event = "WinNew",
-		opts = { highlight = { fg = "#FF966C" } },
+		-- opts = { highlight = { fg = "#FF966C" } },
 	},
 
 	{
 		"declancm/cinnamon.nvim",
-		enabled = true,
+		enabled = false,
 		config = true,
 		event = "User FileOpened",
 		opts = {
@@ -179,22 +178,10 @@ require("lazy").setup({
 	--Replace
 	{ "smjonas/inc-rename.nvim", config = true, event = "VeryLazy" },
 
-	--Web
-	{
-		"NvChad/nvim-colorizer.lua",
-		config = true,
-		name = "colorizer",
-		cmd = { "ColorizerToggle", "ColorizerAttachToBuffer" },
-		opts = { user_default_options = { names = false } },
-	},
-
 	--Colorschemes
 	{
-		"navarasu/onedark.nvim",
-		keys = {
-			{ " Ts", "<cmd>Telescope colorscheme<cr>" },
-			{ " Tp", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" },
-		},
+		"olimorris/onedarkpro.nvim",
+		keys = { { " T", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" } },
 		dependencies = {
 			"LunarVim/lunar.nvim",
 			"folke/tokyonight.nvim",

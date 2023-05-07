@@ -1,7 +1,7 @@
 return {
 	-- a number <1 is a percentage., >1 is a fixed size
 	defaults = {
-		version = "*",
+		version =false,
 	},
 	position = "center",
 	install = { colorscheme = { "catppuccin", "lunar", "tokyonight-moon", "carbonfox", "habamax" } },

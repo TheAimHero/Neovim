@@ -1,7 +1,6 @@
 return {
 	"sindrets/diffview.nvim",
 	cmd = { "DiffviewFileHistory", "DiffviewOpen" },
-	commit = "6420a73b340fdb1f842479cd7640dcca9ec6f5d1", -- temp until new version
 	config = function()
 		-- Lua
 		local actions = require("diffview.actions")
@@ -35,7 +34,7 @@ return {
 				-- For more info, see ':h diffview-config-view.x.layout'.
 				default = {
 					-- Config for changed files, and staged files in diff views.
-					layout = "diff2_horizontal",
+					layout = "diff3_mixed",
 					winbar_info = true, -- See ':h diffview-config-view.x.winbar_info'
 				},
 				merge_tool = {

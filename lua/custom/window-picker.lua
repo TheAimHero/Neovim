@@ -3,6 +3,7 @@ local keymap = vim.keymap.set
 
 return {
 	"s1n7ax/nvim-window-picker",
+	enabled = false,
 	event = "WinNew",
 	name = "window-picker",
 	config = function()

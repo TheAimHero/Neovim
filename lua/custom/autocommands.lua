@@ -18,14 +18,22 @@ autocmd("User", {
 })
 
 --Disable mini on some filetype
-augroup("No_Mini", { clear = true })
+augroup("Disable_Plugins", { clear = true })
 autocmd({ "FileType" }, {
 	pattern = M.disable_table,
-	group = "No_Mini",
+	group = "Disable_Plugins",
 	callback = function()
 		vim.b.miniindentscope_disable = true
 		vim.b.minicursorword_disable = true
 		vim.b.minijump_disable = true
+	end,
+})
+
+autocmd({ "FileType" }, {
+	pattern = { "Outline" },
+	group = "Disable_Plugins",
+	callback = function()
+		vim.cmd("silent UfoDetach")
 	end,
 })
 

@@ -1,6 +1,7 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v2.x",
+	enabled = true,
 	cmd = "NeoTreeFocusToggle",
 	event = "User DirOpened",
 	dependencies = { "MunifTanjim/nui.nvim" },
@@ -34,7 +35,7 @@ return {
 				icon = {
 					folder_closed = "",
 					folder_open = "",
-					folder_empty = "ﰊ",
+					folder_empty = "󰜌",
 					-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
 					-- then these will never be used.
 					default = "*",
@@ -55,11 +56,11 @@ return {
 						added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
 						modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
 						deleted = "✖", -- this can only be used in the git_status source
-						renamed = "", -- this can only be used in the git_status source
+						renamed = "󰁕", -- this can only be used in the git_status source
 						-- Status type
 						untracked = "?",
 						ignored = "",
-						unstaged = "",
+						unstaged = "󰄱",
 						staged = "",
 						conflict = "",
 					},
@@ -136,7 +137,7 @@ return {
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
 				-- window like netrw would, regardless of window.position
 				-- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-				use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+				use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
 				-- instead of relying on nvim autocmd events.
 				window = {
 					mappings = {
@@ -148,7 +149,6 @@ return {
 						["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
 						-- ["D"] = "fuzzy_sorter_directory",
 						["f"] = "filter_on_submit",
-						["<C-h>"] = "clear_filter",
 						["[g"] = "prev_git_modified",
 						["]g"] = "next_git_modified",
 					},

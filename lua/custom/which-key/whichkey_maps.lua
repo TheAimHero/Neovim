@@ -1,16 +1,18 @@
 local wk = require("which-key")
 wk.register({
 	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
-	-- c = { "<cmd>lua M.Del()<CR>", "Close Buffer" },
-	c = { "<cmd>Bdelete<CR>", "Close Buffer" },
-	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
+	-- c = { "<cmd>Bdelete<cr>", "Close Buffer" },
+	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
 		r = { "Advanced Replace" },
-		l = { "List Session" },
 		e = { "Emoji" },
 		g = { "Glyph" },
+    
+    -- c={"<cmd>Codeium DisableBu"}
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
+		l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
 	},
 	s = {
 		name = "Search", -- optional group name
@@ -27,11 +29,7 @@ wk.register({
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
 		u = { "Undo History" },
 	},
-	T = {
-		name = "Themes",
-		s = { "Colorscheme Search" },
-		p = { "Colorscheme with Preview" },
-	},
+	T = { name = "Themes" },
 	l = {
 		name = "LSP",
 		a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
@@ -64,12 +62,12 @@ wk.register({
 		e = { "<cmd>WindowsEqualize<cr>", "Equalize" },
 		c = { "<cmd>close<cr>", "Close" },
 		v = { "<cmd>vsplit<cr>", "Vertical Split" },
-		h = { "<cmd>split<cr>", "Horizontal Split" },
+		x = { "<cmd>split<cr>", "Horizontal Split" },
 		n = { "<cmd>lua M.New()<cr>", "New File" },
 		j = { "<cmd>Barbecue toggle<cr><cmd>ZenMode<cr>", "Zen Mode" },
 
-		w = { "Pick Window" },
-		W = { "Swap Window" },
+		-- w = { "Pick Window" },
+		-- W = { "Swap Window" },
 	},
 	b = {
 		name = "Buffers",

@@ -82,10 +82,11 @@ M.disable_table = {
 	"terminal",
 	"qf",
 	"nowrite",
+	"norg",
 }
 
 local function file_bool(name)
-	for _, value in ipairs(M.disable_table) do
+	for _, value in ipairs({ "nowrite", "nofile" }) do
 		if string.find(name, value) then
 			return true
 		end
@@ -93,17 +94,13 @@ local function file_bool(name)
 	return false
 end
 
--- M.Del = function()
--- 	local name_file = vim.api.nvim_exec("set filetype?", true)
--- 	local status
--- 	if file_bool(name_file) then
--- 		vim.cmd("q")
--- 	else
--- 		status = pcall(vim.cmd, "Bdelete")
--- 	end
--- 	if status == false then
--- 		vim.cmd("echo '  save the file first  '")
--- 	end
--- end
+M.Del = function()
+	local name_file = vim.api.nvim_exec("set buftype?", true)
+	if file_bool(name_file) then
+		vim.cmd("q")
+	else
+		vim.cmd("Bdelete")
+	end
+end
 
 return M

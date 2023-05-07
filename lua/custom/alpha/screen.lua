@@ -65,6 +65,7 @@ local buttons = {
 		button("f", "Find file", ":Telescope find_files hidden=true<CR>"),
 		button("r", "Recently opened files", ":Telescope oldfiles<CR>"),
 		button("p", "Projects", ":Telescope projects<CR>"),
+		button("l", "Sessions", ":Telescope persisted<CR>"),
 		button("q", "Quit", ":q<CR>"),
 	},
 	opts = {

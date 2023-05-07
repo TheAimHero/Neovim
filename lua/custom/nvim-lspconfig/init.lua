@@ -9,6 +9,7 @@ return {
 	require("custom.lightbulb"),
 	{
 		"ray-x/lsp_signature.nvim",
+		enabled = true,
 		lazy = true,
 		config = function()
 			require("lsp_signature").setup({
