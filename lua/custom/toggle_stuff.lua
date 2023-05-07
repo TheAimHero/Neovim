@@ -29,6 +29,17 @@ keymap("n", "\\q", function()
 	vim.notify(string.format("Quick Scope %s", state_quickscope), "info", { title = "QuickScope" })
 end)
 
+local state_cmp = true
+keymap("n", "\\l", function()
+	if state_cmp then
+		vim.cmd(":lua require('cmp').setup.buffer { enabled = false }")
+	else
+		vim.cmd(":lua require('cmp').setup.buffer { enabled = true }")
+	end
+	state_cmp = not state_cmp
+	vim.notify(string.format("Completion %s", state_cmp), "info", { title = "Completion" })
+end)
+
 local state_indentline = true
 keymap("n", "\\i", function()
 	vim.cmd("IndentBlanklineToggle")
