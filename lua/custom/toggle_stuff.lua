@@ -1,8 +1,16 @@
 local keymap = vim.keymap.set
 
+local color = "Catppuccin Mocha"
 keymap("n", "\\b", function()
-	vim.go.background = vim.go.background == "light" and "dark" or "light"
-	vim.notify(string.format("Background = %s", vim.go.background), "info", { title = "Ui" })
+	vim.cmd("Lazy load onedarkpro.nvim")
+	if color == "Catppuccin Mocha" then
+		vim.cmd("colorscheme onedark_dark")
+		color = "OneDarkPro Dark"
+	else
+		vim.cmd("colorscheme catppuccin-mocha")
+		color = "Catppuccin Mocha"
+	end
+	vim.notify("Color Scheme: " .. color, "info", { title = "Ui" })
 end)
 
 keymap("n", "\\w", function()
@@ -20,13 +28,36 @@ keymap("n", "\\s", function()
 	vim.notify(string.format("spell %s", vim.wo.spell), "info", { title = "Spell" })
 end)
 
-keymap("n", "\\a", "<cmd>ASToggle<CR>")
+local codeium = true
+keymap("n", "\\a", function()
+	if codeium then
+		vim.cmd("Codeium DisableBuffer")
+	else
+		vim.cmd("Codeium EnableBuffer")
+	end
+	codeium = not codeium
+	vim.notify(string.format("Codeium %s", codeium), "info", { title = "Codeium" })
+end)
 
-local state_quickscope = true
-keymap("n", "\\q", function()
-	vim.cmd("QuickScopeToggle")
-	state_quickscope = not state_quickscope
-	vim.notify(string.format("Quick Scope %s", state_quickscope), "info", { title = "QuickScope" })
+local gitsigns = true
+keymap("n", "\\g", function()
+	vim.cmd("Gitsigns toggle_signs")
+	gitsigns = not gitsigns
+	vim.notify(string.format("Gitsigns %s", gitsigns), "info", { title = "Gitsigns" })
+end)
+
+local inlay_hints = true
+keymap("n", "\\h", function()
+	vim.cmd("lua require('lsp-inlayhints').toggle()")
+	inlay_hints = not inlay_hints
+	vim.notify(string.format("Inlay Hints %s", inlay_hints), "info", { title = "Inlay Hints" })
+end)
+
+local eyeliner = true
+keymap("n", "\\e", function()
+	vim.cmd("EyelinerToggle")
+	eyeliner = not eyeliner
+	vim.notify(string.format("Eyeliner %s", eyeliner), "info", { title = "Eyeliner" })
 end)
 
 local state_cmp = true
@@ -47,7 +78,7 @@ keymap("n", "\\i", function()
 	vim.notify(string.format("Indent Lines %s", state_indentline), "info", { title = "IndentBlankline" })
 end)
 
-local state_lsp_lines = true
+local state_lsp_lines = false
 keymap("n", "\\d", function()
 	vim.cmd("lua require('lsp_lines').toggle()")
 	state_lsp_lines = not state_lsp_lines

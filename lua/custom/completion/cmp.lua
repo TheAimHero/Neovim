@@ -1,7 +1,7 @@
 return {
 	"hrsh7th/nvim-cmp",
 	version = false,
-	event = { "InsertEnter", "CmdlineEnter" },
+	event = { "InsertEnter" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-cmdline",
@@ -12,35 +12,33 @@ return {
 	config = function()
 		local cmp = require("cmp")
 
-		--   פּ ﯟ   some other good icons
 		local kind_icons = {
-			Text = "",
-			Method = "m",
-			Function = "",
-			Constructor = "",
-			Field = "",
-			Variable = "",
-			Class = "",
-			Interface = "",
-			Module = "",
-			Property = "",
-			Unit = "",
-			Value = "",
-			Enum = "",
-			Keyword = "",
-			Snippet = "",
-			Color = "",
-			File = "",
-			Reference = "",
-			Folder = "",
-			EnumMember = "",
-			Constant = "",
-			Struct = "",
-			Event = "",
-			Operator = "",
-			TypeParameter = "",
+			Text = "  ",
+			Method = "  ",
+			Function = "ƒ ",
+			Constructor = "  ",
+			Field = "  ",
+			Variable = "  ",
+			Class = "  ",
+			Interface = "  ",
+			Module = "  ",
+			Property = "  ",
+			Unit = "  ",
+			Value = "  ",
+			Enum = "  ",
+			Keyword = "  ",
+			Snippet = "  ",
+			Color = "  ",
+			File = "  ",
+			Reference = "  ",
+			Folder = "  ",
+			EnumMember = "  ",
+			Constant = "  ",
+			Struct = "  ",
+			Event = "  ",
+			Operator = "  ",
+			TypeParameter = "  ",
 		}
-		-- find more here: https://www.nerdfonts.com/cheat-sheet
 
 		cmp.setup({
 			enabled = function()

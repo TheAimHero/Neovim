@@ -1,5 +1,6 @@
 return {
 	"olimorris/persisted.nvim",
+	enabled = false,
 	config = function()
 		require("persisted").setup({
 			save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved

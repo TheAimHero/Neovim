@@ -8,7 +8,7 @@ return {
 			setopt = true,
 			thousands = false,
 			relculright = false,
-			ft_ignore = nil,
+			ft_ignore = { "Outline", "Trouble", "neo-tree" },
 			bt_ignore = nil,
 			segments = {
 				{ text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },

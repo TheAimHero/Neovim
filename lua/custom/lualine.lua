@@ -49,9 +49,9 @@ return {
 						end,
 					},
 					{
-						function()
-							return vim.fn["codeium#GetStatusString"]()
-						end,
+						-- function()
+						-- 	return vim.fn["codeium#GetStatusString"]()
+						-- end,
 					},
 				},
 				lualine_c = { { require("recorder").recordingStatus } },
@@ -61,13 +61,13 @@ return {
 						on_click = function()
 							vim.cmd("Trouble document_diagnostics")
 						end,
-						symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
+						symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					},
 					{
 						"os.date('%I:%M %p')",
 						icons_enabled = true,
 						color = { fg = "#ff9e64" },
-						icon = "󱎫",
+						icon = "",
 					},
 					{
 						require("lazy.status").updates,

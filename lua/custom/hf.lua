@@ -4,7 +4,11 @@ return {
 	enabled = true,
 	config = function()
 		vim.g.codeium_disable_bindings = 1
-		-- vim.g.codeium_manual = true
+		-- vim.g.codeium_filetypes = { TelescopePrompt = false }
+		vim.cmd([[let g:codeium_filetypes = {
+    \ "TelescopePrompt": v:false,
+    \ "typescript": v:true,
+    \ }]])
 		local opts = { noremap = true, silent = true }
 		local keymap = vim.keymap.set
 		keymap("i", "<C-d>", function()

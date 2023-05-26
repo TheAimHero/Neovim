@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+	require("custom.todo-comments"),
 	require("custom.catppuccin"),
 	require("custom.Noice"),
 	require("custom.hf"),
@@ -20,13 +21,13 @@ require("lazy").setup({
 	require("custom.web_dev"),
 	require("custom.goto-preview"),
 	require("custom.neorg"),
+	require("custom.harpoon"),
 	require("custom.nvim-tree"),
 	require("custom.marks"),
 	require("custom.treesitter"),
 	require("custom.gitsigns"),
 	require("custom.ssr"),
 	require("custom.ufo"),
-	require("custom.tsnode-marker"),
 	require("custom.completion"),
 	require("custom.diffview"),
 	require("custom.barbecue"),
@@ -51,7 +52,6 @@ require("lazy").setup({
 	require("custom.nvim-hlslens"),
 	require("custom.autopairs"),
 	require("custom.lualine"),
-	require("custom.markdown"),
 	require("custom.refactor"),
 	require("custom.persisted"),
 	require("custom.alpha"),
@@ -85,7 +85,7 @@ require("lazy").setup({
 	},
 	{
 		"numToStr/Comment.nvim",
-		enabled = true,
+		enabled = false,
 		config = true,
 		-- event = "User FileOpened",
 		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
@@ -176,7 +176,11 @@ require("lazy").setup({
 	},
 
 	--Replace
-	{ "smjonas/inc-rename.nvim", config = true, event = "VeryLazy" },
+	{
+		"smjonas/inc-rename.nvim",
+		cmd = "IncRename",
+		config = true,
+	},
 
 	--Colorschemes
 	{

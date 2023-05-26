@@ -20,8 +20,6 @@ return {
 
 				formatting.prettierd.with({ disabled_filetypes = { "html" } }),
 				-- code_actions.gitsigns,
-				code_actions.eslint_d,
-
 			},
 		})
 		require("mason-null-ls").setup()

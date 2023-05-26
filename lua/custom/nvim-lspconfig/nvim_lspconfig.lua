@@ -5,7 +5,7 @@ return {
 	version = false,
 	dependencies = {
 		"mason.nvim",
-		-- "lsp_signature.nvim",
+		"lsp_signature.nvim",
 		"mason-lspconfig.nvim",
 	},
 }

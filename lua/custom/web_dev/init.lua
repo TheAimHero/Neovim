@@ -4,10 +4,10 @@ return {
 		ft = { "javascriptreact", "javascript", "html" },
 	},
 	{
-    "MaxMEllon/vim-jsx-pretty",
-    enabled = false,
-    ft = { "javascriptreact" },
-  },
+		"MaxMEllon/vim-jsx-pretty",
+		enabled = false,
+		ft = { "javascriptreact" },
+	},
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = true,

@@ -6,18 +6,17 @@ wk.register({
 	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
-		r = { "Advanced Replace" },
+		-- r = { "Advanced Replace" },
 		e = { "Emoji" },
 		g = { "Glyph" },
-    
-    -- c={"<cmd>Codeium DisableBu"}
+		t = { "<cmd>TodoTrouble<cr>", "Todo Comments" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
-		l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
+		-- l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
 	},
 	s = {
-		name = "Search", -- optional group name
+		name = "Search",
 		w = { "<cmd>Telescope find_files hidden=true<cr>", "Workspace" }, -- create a binding with label
-		f = { "Find File" }, -- create a binding with label
+		f = { "Find File" },
 		r = { "<cmd>Telescope oldfiles hidden=true<cr>", "Recent Files" },
 		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy find file" },

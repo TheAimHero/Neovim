@@ -93,7 +93,7 @@ return {
 			},
 			hooks = {}, -- See ':h diffview-config-hooks'
 			keymaps = {
-				disable_defaults = false, -- Disable the default keymaps
+				disable_defaults = true, -- Disable the default keymaps
 				view = {
 					-- The `view` bindings are active in the diff buffers, only when the current
 					-- tabpage is a Diffview.
@@ -134,18 +134,12 @@ return {
 				},
 				diff3 = {
 					-- Mappings in 3-way diff layouts
-					{
-						{ "n", "x" },
-						"2do",
-						actions.diffget("ours"),
-						{ desc = "Obtain the diff hunk from the OURS version of the file" },
-					},
-					{
-						{ "n", "x" },
-						"3do",
-						actions.diffget("theirs"),
-						{ desc = "Obtain the diff hunk from the THEIRS version of the file" },
-					},
+					{ "n", "[c", actions.conflict_choose("ours"), { desc = "Choose the OURS version of a conflict" } },
+					{ "n", "]c", actions.conflict_choose("theirs"), { desc = "Choose the THEIRS version of a conflict" } },
+          { "n", "[C",  actions.conflict_choose_all("ours"),    { desc = "Choose the OURS version of a conflict for the whole file" } },
+          { "n", "]C",  actions.conflict_choose_all("theirs"),  { desc = "Choose the THEIRS version of a conflict for the whole file" } },
+					{ { "n", "x" }, "2do", actions.diffget("ours"), { desc = "Obtain the diff hunk from the OURS version of the file" } },
+					{ { "n", "x" }, "3do", actions.diffget("theirs"), { desc = "Obtain the diff hunk from the THEIRS version of the file" } },
 					{ "n", "g?", actions.help({ "view", "diff3" }), { desc = "Open the help panel" } },
 				},
 				diff4 = {

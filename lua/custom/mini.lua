@@ -7,11 +7,14 @@ return {
 
 		require("mini.cursorword").setup()
 
+		require("mini.comment").setup()
+
 		require("mini.move").setup()
 
 		require("mini.bracketed").setup({
 			jump = { suffix = "", options = {} },
 			location = { suffix = "", options = {} },
+			file = { suffix = "", options = {} },
 			oldfile = { suffix = "", options = {} },
 			treesitter = { suffix = "", options = {} },
 			undo = { suffix = "", options = {} },
