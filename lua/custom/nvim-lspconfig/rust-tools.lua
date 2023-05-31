@@ -1,14 +1,10 @@
 return {
 	"simrat39/rust-tools.nvim",
-	enabled = true,
-	filetype = "rust",
+	enabled = false,
+	ft = "rust",
 	config = function()
 		require("rust-tools").setup({
-			tools = {
-				inlay_hints = {
-					auto = false,
-				},
-			},
+			tools = { inlay_hints = { auto = false } },
 			server = {
 				on_attach = function(c, bufnr)
 					require("lsp-inlayhints").on_attach(c, bufnr)

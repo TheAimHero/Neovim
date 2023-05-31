@@ -25,7 +25,8 @@ return {
 			["lua_ls"] = require("custom.nvim-lspconfig.setting.lua_ls"),
 			["pyright"] = require("custom.nvim-lspconfig.setting.pyright"),
 			["clangd"] = require("custom.nvim-lspconfig.setting.clangd"),
-			-- ["rust_analyzer"] = require("custom.nvim-lspconfig.setting.rust_analyzer"),
+			["jsonls"] = require("custom.nvim-lspconfig.setting.jsonls"),
+			["rust_analyzer"] = require("custom.nvim-lspconfig.setting.rust_analyzer"),
 		})
 	end,
 }

@@ -21,6 +21,10 @@ return {
 		end,
 	},
 	{
+		"b0o/schemastore.nvim",
+		lazy=true,
+	},
+	{
 		"ErichDonGubler/lsp_lines.nvim",
 		-- enabled = true,
 		event = "User FileOpened",

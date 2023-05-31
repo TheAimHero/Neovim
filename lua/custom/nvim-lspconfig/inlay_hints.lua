@@ -1,9 +1,10 @@
 return {
 	"lvimuser/lsp-inlayhints.nvim",
-	branch = "anticonceal",
+  -- NOTE: After upgrading to 0.10.0
+	-- branch = "anticonceal",
 	lazy = true,
 	-- NOTE: Enable inlay hints in the respective server configuration in order to use it to use it
-	enabled = false,
+	enabled = true,
 	config = function()
 		require("lsp-inlayhints").setup({
 			inlay_hints = {

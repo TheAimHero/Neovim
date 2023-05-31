@@ -15,12 +15,12 @@ end)
 
 keymap("n", "\\w", function()
 	vim.wo.wrap = not vim.wo.wrap
-	vim.notify(string.format("Wrap = %s", vim.wo.wrap), "info", { title = "Ui" })
+	vim.notify(string.format("Wrap  %s", vim.wo.wrap), "info", { title = "Ui" })
 end)
 
 keymap("n", "\\c", function()
 	vim.wo.cursorline = not vim.wo.cursorline
-	vim.notify(string.format("Cursorline = %s", vim.wo.cursorline), "info", { title = "Ui" })
+	vim.notify(string.format("Cursorline  %s", vim.wo.cursorline), "info", { title = "Ui" })
 end)
 
 keymap("n", "\\s", function()
@@ -46,6 +46,7 @@ keymap("n", "\\g", function()
 	vim.notify(string.format("Gitsigns %s", gitsigns), "info", { title = "Gitsigns" })
 end)
 
+-- NOTE: Does not work at the properly at the moment
 local inlay_hints = true
 keymap("n", "\\h", function()
 	vim.cmd("lua require('lsp-inlayhints').toggle()")

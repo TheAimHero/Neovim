@@ -1,8 +1,8 @@
 local wk = require("which-key")
 wk.register({
 	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
-	c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
-	-- c = { "<cmd>Bdelete<cr>", "Close Buffer" },
+	-- c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
+	c = { "<cmd>Bdelete<cr>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
