@@ -1,6 +1,6 @@
 return {
 	"olimorris/persisted.nvim",
-	-- keys = { { " ul", "<cmd>Telescope persisted<cr>", desc = "List sessions" }, { "l", modes = { "n" } } },
+	enabled = false,
 	config = function()
 		require("persisted").setup({
 			save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved

@@ -1,6 +1,6 @@
 return {
-	-- "Pocco81/auto-save.nvim",
 	"zoriya/auto-save.nvim",
+	enable = false,
 	event = "InsertLeave",
 	config = function()
 		require("auto-save").setup({

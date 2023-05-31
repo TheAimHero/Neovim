@@ -1,5 +1,6 @@
 return {
 	"chentoast/marks.nvim",
+	enabled = false,
 	keys = { { "m", modes = { "n" } }, { "dm", modes = { "n" } } },
 	config = function()
 		require("marks").setup({

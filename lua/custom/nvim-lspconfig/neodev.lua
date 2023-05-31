@@ -1,6 +1,6 @@
 return {
 	"folke/neodev.nvim",
-	enabled = true,
+	enabled = false,
 	event = "InsertEnter",
 	config = true,
 }
