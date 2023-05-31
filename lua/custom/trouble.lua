@@ -3,11 +3,13 @@ return {
 	cmd = "TroubleToggle",
 	config = function()
 		require("trouble").setup({
-			position = "right",
-			width = 25,
+			padding = false,
+			-- position = "right",
+			-- width = 25,
 			use_diagnostic_signs = true,
-			-- auto_close = true,
-			auto_fold = false,
+			auto_close = true,
+			auto_fold = true,
+			action_keys = {},
 		})
 	end,
 }

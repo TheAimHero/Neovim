@@ -1,14 +1,16 @@
 return {
-	-- require("custom.nvim-lspconfig.neodev"),
+	require("custom.nvim-lspconfig.neodev"),
 	require("custom.nvim-lspconfig.nvim_lspconfig"),
 	require("custom.nvim-lspconfig.mason"),
 	require("custom.nvim-lspconfig.mason-lspconfig"),
 	require("custom.nvim-lspconfig.null-ls"),
 	require("custom.nvim-lspconfig.mason-null-ls"),
 	require("custom.nvim-lspconfig.inlay_hints"),
+	require("custom.nvim-lspconfig.rust-tools"),
 	require("custom.lightbulb"),
 	{
 		"ray-x/lsp_signature.nvim",
+		enabled = true,
 		lazy = true,
 		config = function()
 			require("lsp_signature").setup({
@@ -19,10 +21,16 @@ return {
 		end,
 	},
 	{
+		"b0o/schemastore.nvim",
+		lazy=true,
+	},
+	{
 		"ErichDonGubler/lsp_lines.nvim",
+		-- enabled = true,
 		event = "User FileOpened",
 		config = function()
 			require("lsp_lines").setup()
+			vim.cmd("lua require('lsp_lines').toggle()")
 		end,
 	},
 	{

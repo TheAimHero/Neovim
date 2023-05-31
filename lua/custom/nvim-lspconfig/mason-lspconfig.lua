@@ -1,5 +1,6 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
+	enabled = true,
 	cmd = { "LspInstall", "LspUninstall" },
 	config = function()
 		require("mason-lspconfig").setup({
@@ -20,10 +21,12 @@ return {
 			end,
 
 			["tsserver"] = require("custom.nvim-lspconfig.setting.tsserver"),
-      ["html"] = require("custom.nvim-lspconfig.setting.html"),
+			["html"] = require("custom.nvim-lspconfig.setting.html"),
 			["lua_ls"] = require("custom.nvim-lspconfig.setting.lua_ls"),
 			["pyright"] = require("custom.nvim-lspconfig.setting.pyright"),
 			["clangd"] = require("custom.nvim-lspconfig.setting.clangd"),
+			["jsonls"] = require("custom.nvim-lspconfig.setting.jsonls"),
+			["rust_analyzer"] = require("custom.nvim-lspconfig.setting.rust_analyzer"),
 		})
 	end,
 }

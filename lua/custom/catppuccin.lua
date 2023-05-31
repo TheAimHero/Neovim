@@ -46,7 +46,7 @@ return {
 				nvimtree = true,
 				telescope = true,
 				notify = true,
-				mini = false,
+				mini = true,
 				fidget = true,
 				markdown = true,
 				dap = true,

@@ -48,6 +48,11 @@ return {
 							vim.cmd("silent G add %")
 						end,
 					},
+					{
+						-- function()
+						-- 	return vim.fn["codeium#GetStatusString"]()
+						-- end,
+					},
 				},
 				lualine_c = { { require("recorder").recordingStatus } },
 				lualine_x = {
@@ -62,7 +67,7 @@ return {
 						"os.date('%I:%M %p')",
 						icons_enabled = true,
 						color = { fg = "#ff9e64" },
-						icon = "祥",
+						icon = "",
 					},
 					{
 						require("lazy.status").updates,

@@ -1,21 +1,22 @@
 local wk = require("which-key")
 wk.register({
 	e = { "<cmd>NeoTreeFocusToggle<cr>", "File Browser" },
-	c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
-	-- c = { "<cmd>Bdelete<cr>", "Close Buffer" },
+	-- c = { "<cmd>lua M.Del()<cr>", "Close Buffer" },
+	c = { "<cmd>Bdelete<cr>", "Close Buffer" },
 	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
-		r = { "Advanced Replace" },
+		-- r = { "Advanced Replace" },
 		e = { "Emoji" },
 		g = { "Glyph" },
+		t = { "<cmd>TodoTrouble<cr>", "Todo Comments" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
-    l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
+		-- l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
 	},
 	s = {
-		name = "Search", -- optional group name
+		name = "Search",
 		w = { "<cmd>Telescope find_files hidden=true<cr>", "Workspace" }, -- create a binding with label
-		f = { "Find File" }, -- create a binding with label
+		f = { "Find File" },
 		r = { "<cmd>Telescope oldfiles hidden=true<cr>", "Recent Files" },
 		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy find file" },
@@ -27,11 +28,7 @@ wk.register({
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
 		u = { "Undo History" },
 	},
-	T = {
-		name = "Themes",
-		s = { "Colorscheme Search" },
-		p = { "Colorscheme with Preview" },
-	},
+	T = { name = "Themes" },
 	l = {
 		name = "LSP",
 		a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
@@ -64,12 +61,12 @@ wk.register({
 		e = { "<cmd>WindowsEqualize<cr>", "Equalize" },
 		c = { "<cmd>close<cr>", "Close" },
 		v = { "<cmd>vsplit<cr>", "Vertical Split" },
-		h = { "<cmd>split<cr>", "Horizontal Split" },
+		x = { "<cmd>split<cr>", "Horizontal Split" },
 		n = { "<cmd>lua M.New()<cr>", "New File" },
 		j = { "<cmd>Barbecue toggle<cr><cmd>ZenMode<cr>", "Zen Mode" },
 
-		w = { "Pick Window" },
-		W = { "Swap Window" },
+		-- w = { "Pick Window" },
+		-- W = { "Swap Window" },
 	},
 	b = {
 		name = "Buffers",

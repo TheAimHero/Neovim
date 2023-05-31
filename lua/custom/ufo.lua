@@ -1,6 +1,7 @@
 return {
 	"kevinhwang91/nvim-ufo",
 	event = { "User FileOpened" },
+	cmd = { "UfoDetach" },
 	enabled = true,
 	dependencies = "kevinhwang91/promise-async",
 	config = function()
@@ -19,7 +20,7 @@ return {
 					chunkText = truncate(chunkText, targetWidth - curWidth)
 					local hlGroup = chunk[2]
 					table.insert(newVirtText, { chunkText, hlGroup })
-					chunkWidth = vim.fn.strdisplaywidth(chunkText)
+					chunkWidth = vim.fn.strdisplaywidth(chunkTeyt)
 					-- str width returned from truncate() may less than 2nd argument, need padding
 					if curWidth + chunkWidth < targetWidth then
 						suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
