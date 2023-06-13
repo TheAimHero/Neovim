@@ -1,7 +1,7 @@
 return {
 	{
 		"windwp/nvim-ts-autotag",
-		ft = { "javascriptreact", "javascript", "html" },
+		ft = { "typescriptreact", "javascriptreact", "javascript", "html" },
 	},
 	{
 		"MaxMEllon/vim-jsx-pretty",
@@ -14,5 +14,15 @@ return {
 		name = "colorizer",
 		cmd = { "ColorizerToggle", "ColorizerAttachToBuffer" },
 		opts = { user_default_options = { names = true } },
+	},
+	{
+		"themaxmarchuk/tailwindcss-colors.nvim",
+		lazy = true,
+		enabled = false,
+		cmd = "TailwindColorsToggle",
+		module = "tailwindcss-colors",
+		config = function()
+			require("tailwindcss-colors").setup()
+		end,
 	},
 }

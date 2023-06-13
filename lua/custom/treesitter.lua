@@ -6,6 +6,7 @@ return {
 	event = { "User FileOpened" },
 	config = function()
 		require("nvim-treesitter.configs").setup({
+			auto_install = true,
 			ensure_installed = {
 				"markdown",
 				"markdown_inline",
@@ -23,9 +24,7 @@ return {
 			highlight = { enable = true, additional_vim_regex_highlighting = false },
 			indent = { enable = true },
 			autotag = { enable = true },
-			incremental_selection = {
-				enable = true,
-			},
+			incremental_selection = { enable = true },
 		})
 	end,
 }

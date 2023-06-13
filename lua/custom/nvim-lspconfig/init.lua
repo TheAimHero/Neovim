@@ -10,7 +10,7 @@ return {
 	require("custom.lightbulb"),
 	{
 		"ray-x/lsp_signature.nvim",
-		enabled = true,
+		enabled = false,
 		lazy = true,
 		config = function()
 			require("lsp_signature").setup({
@@ -22,7 +22,7 @@ return {
 	},
 	{
 		"b0o/schemastore.nvim",
-		lazy=true,
+		lazy = true,
 	},
 	{
 		"ErichDonGubler/lsp_lines.nvim",

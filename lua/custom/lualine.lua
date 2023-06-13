@@ -61,7 +61,7 @@ return {
 						on_click = function()
 							vim.cmd("Trouble document_diagnostics")
 						end,
-						symbols = { error = " ", warn = " ", info = " ", hint = " " },
+						symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					},
 					{
 						"os.date('%I:%M %p')",

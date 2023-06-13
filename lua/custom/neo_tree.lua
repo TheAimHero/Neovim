@@ -68,11 +68,8 @@ return {
 			},
 			window = {
 				position = "left",
-				width = 25,
-				mapping_options = {
-					noremap = true,
-					nowait = true,
-				},
+				width = 30,
+				mapping_options = { noremap = true, nowait = true },
 				mappings = {
 					["<space>"] = "",
 					["<2-LeftMouse>"] = "open",
@@ -84,12 +81,7 @@ return {
 					["<C-t>"] = "open_tabnew",
 					["zc"] = "close_node",
 					["zm"] = "close_all_nodes",
-					["a"] = {
-						"add",
-						config = {
-							show_path = "none", -- "none", "relative", "absolute"
-						},
-					},
+					["a"] = { "add", config = { show_path = "none" } },
 					["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
 					["d"] = "delete",
 					["r"] = "rename",
@@ -115,11 +107,9 @@ return {
 						"node_modules",
 					},
 					hide_by_pattern = { -- uses glob style patterns
-						--"*.meta",
-						--"*/src/*/tsconfig.json",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
-						".gitignored",
+						".gitignore",
 					},
 					never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 						--".DS_Store",
@@ -131,7 +121,7 @@ return {
 				},
 				follow_current_file = true, -- This will find and focus the file in the active buffer every
 				-- time the current file is changed while the tree is open.
-				group_empty_dirs = true, -- when true, empty folders will be grouped together
+				group_empty_dirs = false, -- when true, empty folders will be grouped together
 				hijack_netrw_behavior = "open_current", -- netrw disabled, opening a directory opens neo-tree
 				-- in whatever position is specified in window.position
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
@@ -182,6 +172,5 @@ return {
 				},
 			},
 		})
-
 	end,
 }

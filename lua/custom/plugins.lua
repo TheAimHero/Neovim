@@ -15,6 +15,7 @@ require("lazy").setup({
 
 	require("custom.todo-comments"),
 	require("custom.catppuccin"),
+	require("custom.bqf"),
 	require("custom.Noice"),
 	require("custom.hf"),
 	require("custom.Outline"),

@@ -1,5 +1,6 @@
 return {
 	"adoyle-h/lsp-toggle.nvim",
+	pin = true,
 	branch = "master",
 	keys = {
 		{ " lt", "<cmd>Telescope ToggleLSP<cr>", desc = "Toggle Lsp" },
