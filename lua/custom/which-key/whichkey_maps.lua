@@ -28,7 +28,10 @@ wk.register({
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
 		u = { "Undo History" },
 	},
-	T = { name = "Themes" },
+	T = {
+		"<cmd>Lazy load onedarkpro.nvim<cr><cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+		"Themes",
+	},
 	l = {
 		name = "LSP",
 		a = { "<cmd>CodeActionMenu<cr>", "Code Action" },

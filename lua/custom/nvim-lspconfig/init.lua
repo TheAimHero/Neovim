@@ -22,11 +22,11 @@ return {
 	},
 	{
 		"b0o/schemastore.nvim",
-		lazy = true,
+		ft = "json",
 	},
 	{
 		"ErichDonGubler/lsp_lines.nvim",
-		-- enabled = true,
+		enabled = true,
 		event = "User FileOpened",
 		config = function()
 			require("lsp_lines").setup()

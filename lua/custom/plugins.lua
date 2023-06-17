@@ -187,11 +187,10 @@ require("lazy").setup({
 	--Colorschemes
 	{
 		"olimorris/onedarkpro.nvim",
-		keys = { { " T", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" } },
+		lazy = "true",
 		dependencies = {
 			"LunarVim/lunar.nvim",
 			"folke/tokyonight.nvim",
-			"telescope.nvim",
 			"EdenEast/nightfox.nvim",
 			"ray-x/starry.nvim",
 		},

@@ -1,6 +1,7 @@
 return {
 	"axkirillov/hbac.nvim",
-	dependencies = { "telescope.nvim", "plenary.nvim", "nvim-web-devicons" },
+	dependencies = { "plenary.nvim", "nvim-web-devicons" },
+	event = "User FileOpened",
 	config = function()
 		require("hbac").setup({
 			autoclose = true, -- set autoclose to false if you want to close manually
