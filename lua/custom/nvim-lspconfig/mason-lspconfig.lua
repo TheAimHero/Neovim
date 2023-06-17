@@ -21,6 +21,7 @@ return {
 			end,
 
 			["tsserver"] = require("custom.nvim-lspconfig.setting.tsserver"),
+			["tailwindcss"] = require("custom.nvim-lspconfig.setting.tailwindcss"),
 			["html"] = require("custom.nvim-lspconfig.setting.html"),
 			["lua_ls"] = require("custom.nvim-lspconfig.setting.lua_ls"),
 			["pyright"] = require("custom.nvim-lspconfig.setting.pyright"),

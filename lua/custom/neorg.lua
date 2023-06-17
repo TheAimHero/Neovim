@@ -20,8 +20,9 @@ return {
 			["core.itero"] = {},
 			["core.journal"] = {},
 			["core.esupports.indent"] = {},
-      -- @todo: doesn't work
-			-- ["core.ui.calendar"] = {},
+			["core.summary"] = {},
+			-- @todo: doesn't work
+			["core.ui.calendar"] = {},
 			--    ["core.keybinds"] = {config={hook=function ()
 			--      keybinds.map('norg','n','gt?',)
 			--

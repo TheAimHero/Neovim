@@ -13,7 +13,7 @@ return {
 			detection_methods = { "pattern", "lsp" },
 			-- All the patterns used to detect root dir, when **"pattern"** is in
 			-- detection_methods
-			patterns = { ".git" },
+			patterns = {"node_modules", ".git" },
 			-- Table of lsp clients to ignore by name
 			-- eg: { "efm", ... }
 			ignore_lsp = {},

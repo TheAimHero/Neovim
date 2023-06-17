@@ -11,10 +11,19 @@ return {
 	},
 	config = function()
 		local actions = require("telescope.actions")
-		require("telescope").setup({
+    require("telescope").setup({
 			defaults = {
+				prompt_prefix = "󰭎 : ",
 				winblend = 20,
+				borderchars = {
+					{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					prompt = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					results = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				},
+				set_env = { ["COLORTERM"] = "truecolor" },
 				pumblend = 20,
+				color_devicons = true,
 				vimgrep_arguments = {
 					"rg",
 					"--color=never",

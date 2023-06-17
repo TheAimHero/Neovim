@@ -3,9 +3,20 @@ return {
 	dependencies = { "telescope.nvim", "sqlite.lua" },
 	event = "User FileOpened",
 	config = function()
+		local utils = require("yanky.utils")
+		local mapping = require("yanky.telescope.mapping")
 		require("yanky").setup({
 			system_clipboard = {
 				sync_with_ring = true,
+			},
+			picker = {
+				select = { action = nil },
+				telescope = {
+					use_default_mappings = false,
+					mappings = {
+						default = mapping.set_register(utils.get_default_register()),
+					},
+				},
 			},
 			ring = {
 				history_length = 100,

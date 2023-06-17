@@ -22,7 +22,7 @@ return {
 	},
 	{
 		"b0o/schemastore.nvim",
-		lazy=true,
+		lazy = true,
 	},
 	{
 		"ErichDonGubler/lsp_lines.nvim",

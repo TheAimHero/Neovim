@@ -6,7 +6,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
+		"FelipeLema/cmp-async-path",
 		"petertriho/cmp-git",
 	},
 	config = function()
@@ -67,6 +67,7 @@ return {
 				-- Set `select` to `false` to only confirm explicitly selected items.
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			},
+
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
@@ -76,20 +77,22 @@ return {
 					return vim_item
 				end,
 			},
+
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
-				{ name = "path" },
+				{ name = "async_path" },
 			},
 			confirm_opts = {
 				behavior = cmp.ConfirmBehavior.Replace,
 				-- select = false,
 				select = true,
 			},
+
 			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered({ border = "single" }),
+				documentation = cmp.config.window.bordered({ border = "single" }),
 			},
 		})
 	end,

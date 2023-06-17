@@ -1,6 +1,7 @@
 return {
 	"j-hui/fidget.nvim",
 	enabled = true,
+	branch = "legacy",
 	event = "User FileOpened",
 	config = function()
 		require("fidget").setup({

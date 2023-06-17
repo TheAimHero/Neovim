@@ -1,6 +1,6 @@
 local dap = require("dap")
 
---Cpp dap configurations
+-- Cpp dap configurations
 dap.configurations.cpp = {
 	{
 		name = "Launch file",

@@ -16,7 +16,7 @@ local options = {
 	smartcase = true,
 	smartindent = true,
 	splitbelow = true,
-	splitkeep = vim.fn.has("nvim-0.9") == 1 and "screen" or nil,
+	splitkeep = vim.fn.has("nvim-0.10.0") == 1 and "screen" or nil,
 	splitright = true,
 	swapfile = false,
 	termguicolors = true,
@@ -61,7 +61,7 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-if vim.fn.has("nvim-0.9.0") == 1 then
+if vim.fn.has("nvim-0.10.0") == 1 then
 	vim.opt.diffopt:append("linematch:60")
 end
 
