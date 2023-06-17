@@ -135,7 +135,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
-		enabled = false,
+    enabled = true,
 		config = true,
 		event = "WinNew",
 		-- opts = { highlight = { fg = "#FF966C" } },
