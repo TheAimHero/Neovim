@@ -63,7 +63,7 @@ wk.register({
 		v = { "<cmd>vsplit<cr>", "Vertical Split" },
 		x = { "<cmd>split<cr>", "Horizontal Split" },
 		n = { "<cmd>lua M.New()<cr>", "New File" },
-		j = { "<cmd>Barbecue toggle<cr><cmd>ZenMode<cr>", "Zen Mode" },
+		j = { "<cmd>ZenMode<cr>", "Zen Mode" },
 
 		-- w = { "Pick Window" },
 		-- W = { "Swap Window" },

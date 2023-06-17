@@ -6,12 +6,8 @@ return {
 			window = {
 				width = 1,
 				options = { statuscolumn = "  ", signcolumn = "no", number = false, relativenumber = false },
-				on_open = function()
-					require("barbecue.ui").toggle(false)
-				end,
-				on_close = function()
-					require("barbecue.ui").toggle(true)
-				end,
+				on_open = function() end,
+				on_close = function() end,
 			},
 		})
 	end,
