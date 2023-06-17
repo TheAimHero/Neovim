@@ -75,6 +75,8 @@ wk.register({
 		e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
 		g = { "<cmd>BufferLineCloseLeft<cr>", "Close all to Left" },
 		j = { "<cmd>BufferLineCloseRight<cr>", "Close all to Right" },
+		p = { "<cmd>Hbac toggle_pin<cr>", "Toggle Pinned" },
+		c = { "<cmd>Hbac close_unpinned<cr>", "Close Unpinned" },
 	},
 	t = {
 		name = "Toggle Term",

@@ -15,6 +15,7 @@ require("lazy").setup({
 
 	require("custom.todo-comments"),
 	require("custom.catppuccin"),
+	require("custom.hbac"),
 	require("custom.bqf"),
 	require("custom.Noice"),
 	require("custom.hf"),
@@ -135,7 +136,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
-    enabled = true,
+		enabled = true,
 		config = true,
 		event = "WinNew",
 		-- opts = { highlight = { fg = "#FF966C" } },

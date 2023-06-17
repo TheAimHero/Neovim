@@ -48,13 +48,17 @@ return {
 							vim.cmd("silent G add %")
 						end,
 					},
+				},
+				lualine_c = {
+					{ require("recorder").recordingStatus },
 					{
-						-- function()
-						-- 	return vim.fn["codeium#GetStatusString"]()
-						-- end,
+						function()
+							local cur_buf = vim.api.nvim_get_current_buf()
+							return require("hbac.state").is_pinned(cur_buf) and "📍" or ""
+						end,
+						color = { fg = "#ef5f6b", gui = "bold" },
 					},
 				},
-				lualine_c = { { require("recorder").recordingStatus } },
 				lualine_x = {
 					{
 						"diagnostics",
