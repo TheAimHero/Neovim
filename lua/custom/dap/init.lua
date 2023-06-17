@@ -2,20 +2,12 @@ return {
 	"mfussenegger/nvim-dap",
 	lazy = true,
 	dependencies = {
-		{ "rcarriga/nvim-dap-ui" },
-		{
-			"theHamsta/nvim-dap-virtual-text",
-			config = true,
-			lazy = true,
-			opts = {
-				all_references = false,
-				enabled_commands = false,
-			},
-		},
-		require("custom.dap.telescope-dap"),
+    require("custom.dap.telescope-dap"),
+    require("custom.dap.dap_virtual_text"),
+		"rcarriga/nvim-dap-ui",
 	},
 	config = function()
-		require("custom.dap.nvim-dap")
+    require("custom.dap.nvim-dap")
 		require("custom.dap.dapui_auto")
 	end,
 }
