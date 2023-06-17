@@ -1,6 +1,6 @@
 return {
 	"j-hui/fidget.nvim",
-	enabled = true,
+	enabled = false,
 	branch = "legacy",
 	event = "User FileOpened",
 	config = function()

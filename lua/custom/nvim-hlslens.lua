@@ -1,6 +1,6 @@
 return {
 	"kevinhwang91/nvim-hlslens",
-	enabled = true,
+	enabled = false,
 	event = "User FileOpened",
 	config = function()
 		local keymap = vim.keymap.set
