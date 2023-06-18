@@ -6,12 +6,15 @@ wk.register({
 	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
-		-- r = { "Advanced Replace" },
 		e = { "Emoji" },
 		g = { "Glyph" },
 		t = { "<cmd>TodoTrouble<cr>", "Todo Comments" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
-		-- l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
+		q = { "<cmd>LBQuestions<cr>", "List Questions" },
+		l = { "<cmd>LBQuestion<cr>", "View Question" },
+		r = { "<cmd>LBReset<cr>", "Reset Code" },
+		T = { "<cmd>LBTest<cr>", "Run Code" },
+		S = { "<cmd>LBSubmit<cr>", "Submit Code" },
 	},
 	s = {
 		name = "Search",
