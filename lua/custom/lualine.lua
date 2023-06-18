@@ -9,6 +9,7 @@ local function diff_source()
 		}
 	end
 end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	event = "User FileOpened",
@@ -50,7 +51,19 @@ return {
 					},
 				},
 				lualine_c = { { require("recorder").recordingStatus } },
+				lualine_y = {},
+				lualine_z = { "filetype" },
 				lualine_x = {
+					{
+						require("noice").api.status.command.get,
+						cond = require("noice").api.status.command.has,
+						color = { fg = "#ff9e64" },
+					},
+					{
+						require("noice").api.status.search.get,
+						cond = require("noice").api.status.search.has,
+						color = { fg = "#ff9e64" },
+					},
 					{
 						"diagnostics",
 						on_click = function()
@@ -73,8 +86,6 @@ return {
 						end,
 					},
 				},
-				lualine_y = { "filetype" },
-				lualine_z = {},
 			},
 			inactive_sections = {
 				lualine_a = {},
