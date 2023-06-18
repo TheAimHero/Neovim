@@ -6,12 +6,15 @@ wk.register({
 	h = { "<cmd>nohlsearch<cr>", "No Highlight" },
 	u = {
 		name = "Utils",
-		-- r = { "Advanced Replace" },
 		e = { "Emoji" },
 		g = { "Glyph" },
 		t = { "<cmd>TodoTrouble<cr>", "Todo Comments" },
 		s = { "<cmd>TSJToggle<cr>", "Split/Join Toggle" },
-		-- l = { "<cmd>Telescope persisted<cr>", "Sessions List" },
+		q = { "<cmd>LBQuestions<cr>", "List Questions" },
+		l = { "<cmd>LBQuestion<cr>", "View Question" },
+		r = { "<cmd>LBReset<cr>", "Reset Code" },
+		T = { "<cmd>LBTest<cr>", "Run Code" },
+		S = { "<cmd>LBSubmit<cr>", "Submit Code" },
 	},
 	s = {
 		name = "Search",
@@ -28,7 +31,10 @@ wk.register({
 		l = { "<cmd>Telescope live_grep<cr>", "Live Grep Workspace" },
 		u = { "Undo History" },
 	},
-	T = { name = "Themes" },
+	T = {
+		"<cmd>Lazy load onedarkpro.nvim<cr><cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+		"Themes",
+	},
 	l = {
 		name = "LSP",
 		a = { "<cmd>CodeActionMenu<cr>", "Code Action" },
@@ -75,6 +81,8 @@ wk.register({
 		e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
 		g = { "<cmd>BufferLineCloseLeft<cr>", "Close all to Left" },
 		j = { "<cmd>BufferLineCloseRight<cr>", "Close all to Right" },
+		p = { "<cmd>Hbac toggle_pin<cr>", "Toggle Pinned" },
+		c = { "<cmd>Hbac close_unpinned<cr>", "Close Unpinned" },
 	},
 	t = {
 		name = "Toggle Term",

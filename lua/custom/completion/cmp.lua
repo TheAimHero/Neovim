@@ -1,11 +1,12 @@
 return {
 	"hrsh7th/nvim-cmp",
 	version = false,
-	event = { "InsertEnter" },
+	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"FelipeLema/cmp-async-path",
+		"hrsh7th/cmp-cmdline",
 		"petertriho/cmp-git",
 	},
 	config = function()
@@ -94,5 +95,6 @@ return {
 				documentation = cmp.config.window.bordered({ border = "single" }),
 			},
 		})
+		require("custom.completion.cmd_cmp")
 	end,
 }

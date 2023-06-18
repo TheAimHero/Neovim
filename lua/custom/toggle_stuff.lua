@@ -86,6 +86,13 @@ keymap("n", "\\d", function()
 	vim.notify(string.format("Lsp Lines %s", state_lsp_lines), "info", { title = "Lsp Lines" })
 end)
 
+local state_colorizer = false
+keymap("n", "\\z", function()
+	vim.cmd("ColorizerToggle")
+	state_colorizer = not state_colorizer
+	vim.notify(string.format("Colorizer %s", state_colorizer), "info", { title = "Colorizer" })
+end)
+
 keymap("n", "\\C", function()
 	local res = vim.api.nvim_exec("set colorcolumn?", true)
 	if string.find(res, "80") then

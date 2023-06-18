@@ -14,7 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.todo-comments"),
+	require("custom.leet_buddy"),
 	require("custom.catppuccin"),
+	require("custom.hbac"),
 	require("custom.bqf"),
 	require("custom.Noice"),
 	require("custom.hf"),
@@ -135,7 +137,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
-    enabled = true,
+		enabled = true,
 		config = true,
 		event = "WinNew",
 		-- opts = { highlight = { fg = "#FF966C" } },
@@ -161,6 +163,7 @@ require("lazy").setup({
 	--Window
 	{
 		"anuvyklack/windows.nvim",
+		commit = "4dcfd82374726097a05bc1fe3b3b6e934be184eb",
 		event = "WinNew",
 		cmd = { "WindowsEqualize", "WindowsMaximize" },
 		dependencies = {
@@ -169,7 +172,7 @@ require("lazy").setup({
 		config = function()
 			require("windows").setup({
 				ignore = {
-					buftype = { "quickfix", "nofile" },
+					buftype = { "quickfix" },
 					filetype = { "Outline", "NvimTree", "neo-tree", "undotree", "gundo" },
 				},
 			})
@@ -186,11 +189,10 @@ require("lazy").setup({
 	--Colorschemes
 	{
 		"olimorris/onedarkpro.nvim",
-		keys = { { " T", "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>" } },
+		lazy = "true",
 		dependencies = {
 			"LunarVim/lunar.nvim",
 			"folke/tokyonight.nvim",
-			"telescope.nvim",
 			"EdenEast/nightfox.nvim",
 			"ray-x/starry.nvim",
 		},

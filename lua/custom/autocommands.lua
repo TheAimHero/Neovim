@@ -51,9 +51,7 @@ autocmd("BufWinEnter", {
 	pattern = "*.*",
 	callback = function()
 		vim.cmd.loadview({ mods = { emsg_silent = true } })
-		vim.cmd("delm!")
 		vim.cmd("lua require('null-ls').disable('cspell')")
-		vim.cmd("delm!")
 	end,
 	group = save_fold,
 })

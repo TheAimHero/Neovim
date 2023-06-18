@@ -8,7 +8,7 @@ return {
 			-- width = 25,
 			use_diagnostic_signs = true,
 			auto_close = true,
-			auto_fold = true,
+			auto_fold = false,
 			action_keys = {},
 		})
 	end,

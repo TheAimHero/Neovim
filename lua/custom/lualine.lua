@@ -48,11 +48,6 @@ return {
 							vim.cmd("silent G add %")
 						end,
 					},
-					{
-						-- function()
-						-- 	return vim.fn["codeium#GetStatusString"]()
-						-- end,
-					},
 				},
 				lualine_c = { { require("recorder").recordingStatus } },
 				lualine_x = {

@@ -1,6 +1,6 @@
 return {
 	"rcarriga/nvim-notify",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 	enabled = true,
 	lazy = true,
 	config = function()
