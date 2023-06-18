@@ -13,18 +13,18 @@ return {
 		local keymap = vim.keymap.set
 		keymap("i", "<C-d>", function()
 			return vim.fn["codeium#Complete"]()
-		end, { expr = true }, opts)
+		end, { silent = true, expr = true }, opts)
 		keymap("i", "<C-f>", function()
 			return vim.fn["codeium#Accept"]()
-		end, { expr = true }, opts)
+		end, { silent = true, silent = true, expr = true }, opts)
 		keymap("i", "<C-n>", function()
 			return vim.fn["codeium#CycleCompletions"](1)
-		end, { expr = true }, opts)
+		end, { silent = true, expr = true }, opts)
 		keymap("i", "<C-p>", function()
 			return vim.fn["codeium#CycleCompletions"](-1)
-		end, { expr = true }, opts)
+		end, { silent = true, expr = true }, opts)
 		keymap("i", "<C-x>", function()
 			return vim.fn["codeium#Clear"]()
-		end, { expr = true }, opts)
+		end, { silent = true, expr = true }, opts)
 	end,
 }
