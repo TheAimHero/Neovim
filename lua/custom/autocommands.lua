@@ -38,19 +38,18 @@ autocmd({ "FileType" }, {
 })
 
 --Persistent folds
+-- NOTE: This is when we want to do something before closing a buffer
 local save_fold = augroup("Persistent Folds", { clear = true })
 autocmd("BufWinLeave", {
 	pattern = "*.*",
-	callback = function()
-		vim.cmd.mkview()
-	end,
+	callback = function() end,
 	group = save_fold,
 })
 
+-- NOTE: This is when we want to do something after opening a buffer
 autocmd("BufWinEnter", {
 	pattern = "*.*",
 	callback = function()
-		vim.cmd.loadview({ mods = { emsg_silent = true } })
 		vim.cmd("lua require('null-ls').disable('cspell')")
 	end,
 	group = save_fold,
