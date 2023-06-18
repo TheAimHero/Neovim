@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.todo-comments"),
+	require("custom.leet_buddy"),
 	require("custom.catppuccin"),
 	require("custom.hbac"),
 	require("custom.bqf"),
@@ -162,6 +163,7 @@ require("lazy").setup({
 	--Window
 	{
 		"anuvyklack/windows.nvim",
+		commit = "4dcfd82374726097a05bc1fe3b3b6e934be184eb",
 		event = "WinNew",
 		cmd = { "WindowsEqualize", "WindowsMaximize" },
 		dependencies = {
@@ -170,7 +172,7 @@ require("lazy").setup({
 		config = function()
 			require("windows").setup({
 				ignore = {
-					buftype = { "quickfix", "nofile" },
+					buftype = { "quickfix" },
 					filetype = { "Outline", "NvimTree", "neo-tree", "undotree", "gundo" },
 				},
 			})
