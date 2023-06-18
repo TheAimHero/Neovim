@@ -11,7 +11,6 @@ return {
 	},
 	config = function()
 		local cmp = require("cmp")
-
 		local kind_icons = {
 			Text = "",
 			Method = "󰆧",
@@ -58,10 +57,9 @@ return {
 			mapping = {
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+				["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+				["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-				["\\y"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 				["<C-e>"] = cmp.mapping({ i = cmp.mapping.abort(), c = cmp.mapping.close() }),
 				-- Accept currently selected item. If none selected, `select` first item.
 				-- Set `select` to `false` to only confirm explicitly selected items.

@@ -13,6 +13,7 @@ return {
 		local actions = require("telescope.actions")
 		require("telescope").setup({
 			defaults = {
+				layout_config = { horizontal = { width = 0.9 } },
 				prompt_prefix = "󰭎 : ",
 				winblend = 20,
 				borderchars = {
@@ -54,8 +55,8 @@ return {
 				color_devicons = true,
 				mappings = {
 					i = {
-						["<C-n>"] = actions.cycle_history_next,
-						["<C-p>"] = actions.cycle_history_prev,
+						["<C-p>"] = actions.preview_scrolling_up,
+						["<C-n>"] = actions.preview_scrolling_down,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
 					},
