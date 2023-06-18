@@ -27,8 +27,8 @@ return {
 				view = "notify",
 				view_error = "notify",
 				view_warn = "notify",
-				wiew_history = "messages",
-				view_search = "virtualtext",
+				wiew_history = "notify",
+				view_search = false,
 			},
 			popupmenu = {
 				enabled = true,
@@ -87,12 +87,12 @@ return {
 					view = "mini",
 				},
 				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = false,
-					["vim.lsp.util.stylize_markdown"] = false,
-					["cmp.entry.get_documentation"] = false,
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true,
 				},
 				hover = {
-					enabled = false,
+					enabled = true,
 					silent = false,
 					view = nil,
 					opts = {},
@@ -102,7 +102,7 @@ return {
 					auto_open = {
 						enabled = true,
 						trigger = true,
-						luasnip = false,
+						luasnip = true,
 						throttle = 50,
 					},
 					view = nil,
@@ -149,10 +149,10 @@ return {
 			},
 			presets = {
 				bottom_search = false,
-				command_palette = true,
+				command_palette = false,
 				long_message_to_split = true,
 				inc_rename = true,
-				lsp_doc_border = false,
+				lsp_doc_border = "single",
 			},
 			throttle = 1000 / 30,
 
@@ -160,6 +160,7 @@ return {
 				cmdline_popup = { border = { style = "single" } },
 				popupmenu = { border = { style = "single" } },
 				completion = { border = { style = "single" } },
+				hover = { border = { style = "single" } },
 			},
 			routes = {},
 			status = {},
