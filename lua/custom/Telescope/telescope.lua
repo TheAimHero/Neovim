@@ -13,9 +13,13 @@ return {
 		local actions = require("telescope.actions")
 		require("telescope").setup({
 			defaults = {
-				layout_config = { horizontal = { width = 0.9 } },
-				prompt_prefix = "󰭎 : ",
+				layout_config = {
+					preview_width = 0.65,
+					horizontal = { width = 0.9 },
+				},
+				prompt_prefix = "🔍 ",
 				winblend = 20,
+				pumblend = 20,
 				borderchars = {
 					{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 					prompt = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
@@ -23,8 +27,6 @@ return {
 					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 				},
 				set_env = { ["COLORTERM"] = "truecolor" },
-				pumblend = 20,
-				color_devicons = true,
 				vimgrep_arguments = {
 					"rg",
 					"--color=never",
@@ -66,8 +68,7 @@ return {
 
 			pickers = {
 				find_files = {
-					find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--color=auto" },
-					path_display = { "truncate = 5" },
+					find_command = { "fd", "--no-ignore", "--type", "f", "--strip-cwd-prefix", "--color=auto" },
 					hidden = true,
 				},
 				live_grep = {
@@ -83,7 +84,7 @@ return {
 			extensions = {
 				rooter = {
 					enable = true,
-					patterns = { ".git" },
+					patterns = { ".git", "node_modules" },
 					debug = false,
 				},
 				fzf = {
