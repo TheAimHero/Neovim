@@ -11,6 +11,7 @@ return {
 	},
 	config = function()
 		local actions = require("telescope.actions")
+		local trouble = require("trouble.providers.telescope")
 		require("telescope").setup({
 			defaults = {
 				layout_config = {
@@ -58,11 +59,16 @@ return {
 				mappings = {
 					i = {
 						["<C-p>"] = actions.preview_scrolling_up,
+						["<c-t>"] = trouble.open_with_trouble,
 						["<C-n>"] = actions.preview_scrolling_down,
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
 					},
-					n = { ["q"] = actions.close, ["<C-c>"] = actions.close },
+					n = {
+						["q"] = actions.close,
+						["<C-c>"] = actions.close,
+						["<c-t>"] = trouble.open_with_trouble,
+					},
 				},
 			},
 
