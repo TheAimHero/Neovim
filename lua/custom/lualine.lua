@@ -50,9 +50,10 @@ return {
 						end,
 					},
 				},
-				lualine_c = { { require("recorder").recordingStatus } },
-				lualine_y = {},
-				lualine_z = { "filetype" },
+				lualine_c = {
+					{ require("recorder").recordingStatus },
+					{ require("recorder").displaySlots },
+				},
 				lualine_x = {
 					{
 						require("noice").api.status.command.get,
@@ -75,7 +76,7 @@ return {
 						"os.date('%I:%M %p')",
 						icons_enabled = true,
 						color = { fg = "#ff9e64" },
-						icon = "",
+						icon = "󰞌",
 					},
 					{
 						require("lazy.status").updates,
@@ -85,7 +86,10 @@ return {
 							vim.cmd(":Lazy update")
 						end,
 					},
+					{ "filetype" },
 				},
+				lualine_y = {},
+				lualine_z = {},
 			},
 			inactive_sections = {
 				lualine_a = {},
