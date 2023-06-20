@@ -50,11 +50,7 @@ end)
 local inlay_hints = true
 keymap("n", "\\h", function()
 	local bufnr = vim.api.nvim_buf_get_number(vim.api.nvim_get_current_buf())
-	if inlay_hints then
-		vim.lsp.buf.inlay_hint(bufnr, false)
-	else
-		vim.lsp.buf.inlay_hint(bufnr, true)
-	end
+		vim.lsp.buf.inlay_hint(bufnr )
 	inlay_hints = not inlay_hints
 	vim.notify(string.format("Inlay Hints %s", inlay_hints), "info", { title = "Inlay Hints" })
 end)
