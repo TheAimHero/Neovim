@@ -2,8 +2,7 @@ return function()
 	require("lspconfig").lua_ls.setup({
 		on_attach = function(c, b)
 			c.server_capabilities.documentFormattingProvider = false
-			-- NOTE: Uncomment to enable inlay hints
-			require("lsp-inlayhints").on_attach(c, b)
+			vim.lsp.buf.inlay_hint(b, true)
 			require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
 		end,
 		capabilities = require("custom.nvim-lspconfig.handlers").capabilities,

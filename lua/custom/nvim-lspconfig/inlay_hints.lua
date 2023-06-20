@@ -4,7 +4,7 @@ return {
 	branch = vim.fn.has("nvim-0.10.0") == 1 and "anticonceal" or "main",
 	lazy = true,
 	-- NOTE: Enable inlay hints in the respective server configuration in order to use it to use it
-	enabled = true,
+	enabled = false,
 	config = function()
 		require("lsp-inlayhints").setup({
 			inlay_hints = {
