@@ -196,5 +196,8 @@ require("lazy").setup({
 			"EdenEast/nightfox.nvim",
 			"ray-x/starry.nvim",
 		},
+		opts = {
+			highlights = { LspInlayHint = { link = "Comment" } },
+		},
 	},
 }, require("custom.lazy"))
