@@ -14,6 +14,7 @@ return {
 				require("lspconfig")[server_name].setup({
 					---@diagnostic disable-next-line: unused-local
 					on_attach = function(c, b)
+						vim.lsp.buf.inlay_hint(b, true)
 						require("custom.nvim-lspconfig.handlers").lsp_keymaps(b)
 					end,
 					capabilities = require("custom.nvim-lspconfig.handlers").capabilities,
