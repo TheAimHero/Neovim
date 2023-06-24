@@ -31,10 +31,9 @@ return {
 				operators = {},
 			},
 			color_overrides = {},
-			custom_highlights = {
-				-- NOTE: Until the colorscheme is updated, this is a workaround
-				LspInlayHint = { fg = "#6c7086", style = { "italic" } },
-			},
+			custom_highlights = function(colors)
+				return { LspInlayHint = { link = "Comment" } }
+			end,
 			integrations = {
 				cmp = true,
 				gitsigns = true,
