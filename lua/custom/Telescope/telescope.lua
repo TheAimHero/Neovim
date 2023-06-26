@@ -15,12 +15,12 @@ return {
 		require("telescope").setup({
 			defaults = {
 				layout_config = {
-					preview_width = 0.65,
-					horizontal = { width = 0.9 },
+					preview_width = 0.7,
+					horizontal = { width = 0.99, height = 0.99 },
 				},
 				prompt_prefix = "🔍 ",
-				winblend = 20,
-				pumblend = 20,
+				-- winblend = 20,
+				-- pumblend = 20,
 				borderchars = {
 					{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 					prompt = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
