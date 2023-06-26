@@ -40,7 +40,7 @@ require("which-key").setup({
 	window = {
 		border = "single", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
-		winblend = 20,
+		-- winblend = 20,
 	},
 	layout = {
 		height = { min = 1, max = 10 }, -- min and max height of the columns
