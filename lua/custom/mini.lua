@@ -14,9 +14,6 @@ return {
 		require("mini.bracketed").setup({
 			jump = { suffix = "", options = {} },
 			location = { suffix = "", options = {} },
-			file = { suffix = "", options = {} },
-			oldfile = { suffix = "", options = {} },
-			treesitter = { suffix = "", options = {} },
 			undo = { suffix = "", options = {} },
 			yank = { suffix = "", options = {} },
 		})

@@ -1,25 +1,9 @@
 M = {}
 
-M.Auto_save = function()
-	return function()
-		vim.cmd("echo 'configok'")
-	end
-end
-
-M.squire = function(name)
-	return function()
-		require("custom." .. name)
-	end
-end
-
 local function sleep(n)
 	local t = os.clock()
 	while os.clock() - t <= n do
 	end
-end
-
-M.Preview_md = function()
-	vim.api.nvim_exec("silent !firefox --new-window", true)
 end
 
 M.New = function()

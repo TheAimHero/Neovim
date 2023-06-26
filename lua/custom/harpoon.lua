@@ -18,8 +18,6 @@ return {
 		local mark = require("harpoon.mark")
 		local ui = require("harpoon.ui")
 		local keymap = vim.keymap.set
-		keymap("n", "]f", function() ui.nav_next() end)
-		keymap("n", "[f", function() ui.nav_prev() end)
 		keymap("n", "mf", mark.add_file)
 		keymap("n", "ms", ui.toggle_quick_menu)
 		keymap("n", "m1", function() ui.nav_file(1) end)
