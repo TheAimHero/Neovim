@@ -21,7 +21,7 @@ return {
 				},
 			},
 			messages = {
-				-- NOTE: If you enable messages, then the cmdline is enabled automatically.
+				-- @note: If you enable messages, then the cmdline is enabled automatically.
 
 				enabled = true,
 				view = "notify",
@@ -161,6 +161,7 @@ return {
 				popupmenu = { border = { style = "single" } },
 				completion = { border = { style = "single" } },
 				hover = { border = { style = "single" } },
+				mini = { win_options = { winblend = 0 } },
 			},
 			routes = {},
 			status = {},
