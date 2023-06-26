@@ -21,7 +21,7 @@ return {
 			["core.journal"] = {},
 			["core.esupports.indent"] = {},
 			["core.summary"] = {},
-			-- TODO: doesn't work
+			-- @todo: doesn't work
 			["core.ui.calendar"] = {},
 			--    ["core.keybinds"] = {config={hook=function ()
 			--      keybinds.map('norg','n','gt?',)
