@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.todo-comments"),
+	require("custom.tabout"),
 	require("custom.leet_buddy"),
 	require("custom.catppuccin"),
 	require("custom.hbac"),
@@ -101,6 +102,7 @@ require("lazy").setup({
 	{ "lukas-reineke/indent-blankline.nvim", event = "User FileOpened" },
 	{
 		"michaelb/sniprun",
+		enabled = false,
 		cmd = "SnipRun",
 		build = "bash ./install.sh",
 		config = true,
