@@ -24,7 +24,7 @@ keymap("n", "<C-J>", "<C-w>j", { desc = "Focus on below window" })
 keymap("n", "<C-K>", "<C-w>k", { desc = "Focus on above window" })
 keymap("n", "<C-L>", "<C-w>l", { desc = "Focus on right window" })
 
---Yanky keymaps
+-- Yanky keymaps
 keymap("n", "p", "<Plug>(YankyPutAfter)", opts)
 keymap("n", "P", "<Plug>(YankyPutBefore)", opts)
 keymap("n", "]r", "<Plug>(YankyCycleForward)", opts)

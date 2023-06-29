@@ -5,9 +5,7 @@ return {
 	version = false,
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-		{ "prochri/telescope-all-recent.nvim" },
 		{ "tsakirist/telescope-lazy.nvim" },
-		{ "paopaol/telescope-git-diffs.nvim" },
 	},
 	config = function()
 		local actions = require("telescope.actions")
@@ -108,7 +106,6 @@ return {
 		extension("fzf")
 		extension("projects")
 		extension("lazy")
-		extension("git_diffs")
 		extension("notify")
 	end,
 }

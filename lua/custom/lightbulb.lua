@@ -1,6 +1,7 @@
 return {
 	"kosayoda/nvim-lightbulb",
-	ft = { "javascript", "rust", "lua", "cpp" },
+	commit = "ca5b44a8efffb5fec1963ccd21f25ec04cc778b7",
+	event = "LspAttach",
 	dependencies = "antoinemadec/FixCursorHold.nvim",
 	config = function()
 		require("nvim-lightbulb").setup({

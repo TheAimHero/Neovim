@@ -14,11 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	require("custom.todo-comments"),
-	require("custom.tabout"),
+	require("custom.colorscheme"),
 	require("custom.leet_buddy"),
-	require("custom.catppuccin"),
 	require("custom.hbac"),
-	require("custom.bqf"),
 	require("custom.Noice"),
 	require("custom.hf"),
 	require("custom.Outline"),
@@ -26,11 +24,8 @@ require("lazy").setup({
 	require("custom.goto-preview"),
 	require("custom.neorg"),
 	require("custom.harpoon"),
-	require("custom.nvim-tree"),
-	require("custom.marks"),
 	require("custom.treesitter"),
 	require("custom.gitsigns"),
-	require("custom.ssr"),
 	require("custom.ufo"),
 	require("custom.completion"),
 	require("custom.diffview"),
@@ -56,8 +51,6 @@ require("lazy").setup({
 	require("custom.nvim-hlslens"),
 	require("custom.autopairs"),
 	require("custom.lualine"),
-	require("custom.refactor"),
-	require("custom.persisted"),
 	require("custom.alpha"),
 	require("custom.window-picker"),
 	require("custom.neo_tree"),
@@ -100,13 +93,6 @@ require("lazy").setup({
 		event = "User FileOpened",
 	},
 	{ "lukas-reineke/indent-blankline.nvim", event = "User FileOpened" },
-	{
-		"michaelb/sniprun",
-		enabled = false,
-		cmd = "SnipRun",
-		build = "bash ./install.sh",
-		config = true,
-	},
 	{ "kkharji/sqlite.lua", lazy = true },
 	{ "famiu/bufdelete.nvim", cmd = { "Bdelete" } },
 	{
@@ -186,20 +172,5 @@ require("lazy").setup({
 		"smjonas/inc-rename.nvim",
 		cmd = "IncRename",
 		config = true,
-	},
-
-	--Colorschemes
-	{
-		"olimorris/onedarkpro.nvim",
-		lazy = "true",
-		dependencies = {
-			"LunarVim/lunar.nvim",
-			"folke/tokyonight.nvim",
-			"EdenEast/nightfox.nvim",
-			"ray-x/starry.nvim",
-		},
-		opts = {
-			highlights = { LspInlayHint = { link = "Comment" } },
-		},
 	},
 }, require("custom.lazy"))

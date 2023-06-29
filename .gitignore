@@ -2,3 +2,4 @@
 lazy-lock*
 **/.luarc.json
 **/spell/
+**/neorg/workspaces.lua

@@ -34,9 +34,7 @@ return {
 			},
 			["core.dirman"] = {
 				config = {
-					workspaces = {
-						Neorg = "~/Neorg",
-					},
+					workspaces = require("custom.neorg.workspaces"),
 					default_workspace = "Neorg",
 				},
 			},

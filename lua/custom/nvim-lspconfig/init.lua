@@ -27,7 +27,7 @@ return {
 	{
 		"ErichDonGubler/lsp_lines.nvim",
 		enabled = true,
-		event = "User FileOpened",
+		lazy = true,
 		config = function()
 			require("lsp_lines").setup()
 			vim.cmd("lua require('lsp_lines').toggle()")

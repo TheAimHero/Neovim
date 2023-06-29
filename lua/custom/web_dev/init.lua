@@ -2,11 +2,16 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		ft = { "typescriptreact", "javascriptreact", "javascript", "html" },
+		config = function()
+			require("nvim-ts-autotag").setup({
+				skip_tags = "",
+			})
+		end,
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
 		name = "colorizer",
-		-- NOTE: This is for inline virtual text not yet merged
+		-- @note: This is for inline virtual text not yet merged
 		-- commit = "72aba5511b6af8405f26c3922c12a17bf8a680d1",
 		cmd = { "ColorizerToggle", "ColorizerAttachToBuffer" },
 		config = function()
@@ -23,7 +28,7 @@ return {
 					css = true,
 					css_fn = true,
 					mode = "background",
-					-- NOTE: This is for inline virtual text
+					-- @note: This is for inline virtual text
 					-- mode = "inline",
 					tailwind = "both",
 					sass = { enable = true, parsers = { "css" } },
