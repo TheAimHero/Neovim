@@ -50,7 +50,6 @@ autocmd("BufWinLeave", {
 autocmd("BufWinEnter", {
 	pattern = "*.*",
 	callback = function()
-		vim.cmd("lua require('null-ls').disable('cspell')")
 	end,
 	group = save_fold,
 })

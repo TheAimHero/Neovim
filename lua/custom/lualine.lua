@@ -50,10 +50,7 @@ return {
 						end,
 					},
 				},
-				lualine_c = {
-					{ require("recorder").recordingStatus },
-					{ require("recorder").displaySlots },
-				},
+				lualine_c = {},
 				lualine_x = {
 					{
 						require("noice").api.status.command.get,

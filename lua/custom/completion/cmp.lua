@@ -3,11 +3,9 @@ return {
 	version = false,
 	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"FelipeLema/cmp-async-path",
 		"hrsh7th/cmp-cmdline",
-		"petertriho/cmp-git",
 	},
 	config = function()
 		local cmp = require("cmp")
