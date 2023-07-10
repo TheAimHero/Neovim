@@ -1,6 +1,5 @@
 require("custom.disable")
 require("custom.functions")
-require("custom.statuscolumn")
 require("custom.options")
 require("custom.autocommands")
 require("custom.plugins")
